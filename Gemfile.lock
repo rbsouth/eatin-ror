@@ -115,13 +115,17 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.1)
       mimemagic (~> 0.3.2)
+    metaclass (0.0.4)
     method_source (0.9.0)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    mocha (1.4.0)
+      metaclass (~> 0.0.1)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    nifty-generators (0.4.6)
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -233,6 +237,8 @@ DEPENDENCIES
   jquery-rails
   json
   listen (>= 3.0.5, < 3.2)
+  mocha
+  nifty-generators
   parsley-rails
   puma (~> 3.11)
   rails (~> 5.2.0.rc2)
