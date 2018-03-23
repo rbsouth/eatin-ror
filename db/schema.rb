@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_23_165729) do
+ActiveRecord::Schema.define(version: 2018_03_23_170200) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2018_03_23_165729) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "groupies", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_groupies_on_group_id"
+    t.index ["user_id"], name: "index_groupies_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
