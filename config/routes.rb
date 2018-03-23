@@ -6,6 +6,6 @@ Rails.application.routes.draw do
  	resources :freindships, only: [:create, :destroy]
  	resources :groupies, only: [:create, :destroy]
  	resources :challenges
-	root "home#index" 
+	root "users#index" 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
