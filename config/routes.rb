@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
+
   devise_for :users
-	root "home#index" 
+ 	resources :users, only: [:index, :show]
+ 	resources :groups
+ 	resources :freindships, only: [:create, :destroy]
+ 	resources :groupies, only: [:create, :destroy]
+ 	resources :challenges
+	root "users#index" 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
