@@ -4,8 +4,8 @@ class CreateChallenges < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :food
       t.datetime :due_by
-      t.boolean :complete
-      t.groupie :references
+      t.boolean :complete, default: false
+      t.references :groupie, foreign_key: true
 
       t.timestamps
     end

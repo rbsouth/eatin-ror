@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_23_170200) do
+ActiveRecord::Schema.define(version: 2018_03_23_170930) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "location"
+    t.string "food"
+    t.datetime "due_by"
+    t.boolean "complete", default: false
+    t.integer "groupie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["groupie_id"], name: "index_challenges_on_groupie_id"
+  end
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
