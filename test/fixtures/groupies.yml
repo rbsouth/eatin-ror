@@ -2,10 +2,8 @@
 
 one:
   user: one
-  friend_id: 1
-  accepted: false
+  group: one
 
 two:
   user: two
-  friend_id: 1
-  accepted: false
+  group: two

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  food: MyString
+  due_by: 2018-03-23 11:09:30
+  complete: false
+  references: 
+
+two:
+  location: MyString
+  food: MyString
+  due_by: 2018-03-23 11:09:30
+  complete: false
+  references: 
