@@ -12,3 +12,6 @@
 <% else %>
 	<h3> <%= link_to "Sign In", new_user_session_path %> and start a group! </h3>
 <% end %>
+
+<%= @group.errors[:name][0] %>
+<%= @group.errors[:user_id][0] %>

@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
+	has_many :groupies
 	has_many :users, through: :groupies
 
-	validates :user_id, :name, presence: true
+	validates :name, presence: true
 end

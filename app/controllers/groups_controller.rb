@@ -1,19 +1,27 @@
 class GroupsController < ApplicationController
+  # Shows all groups current user is a groupie in
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
+  # shows specified group
   def show
-    @group = Group.find(params[:id])
+    @group = current_user.groups.find(params[:id])
   end
 
+  # CREATED_GROUPS defined in model, allows admin privilages
+  # form for creating group
   def new
-    @group = Group.new
+    @group = current_user.created_groups.new
   end
 
+  # creates group
   def create
-    @group = Group.new(group_params)
+    p params
+    @group = current_user.created_groups.new(group_params)
     if @group.save
+      # adds user into group or rerenders page
+      current_user.groups << @group
       puts "yay"
       redirect_to @group
     else
@@ -22,17 +30,18 @@ class GroupsController < ApplicationController
     end
   end
 
+  # form for updating group
   def edit
-    @group = Group.find(params[:id])
+    @group = current_user.created_groups.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
+    @group = current_user.created_groups.find(params[:id])
     @group.update_attributes(group_params)
   end
 
   def destroy
-    Group.find(params[:id]).destroy
+    current_user.created_groups.find(params[:id]).destroy
   end
 
   private
