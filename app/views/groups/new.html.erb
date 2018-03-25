@@ -1,2 +1,17 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<% if user_signed_in? %>
+	
+	<%= form_with model: @group, data: {"parsley-validate": ''}, local: true do |f| %>
+		
+		<div class="form-group">
+			<%= f.text_field :name, reqired: true, placeholder: 'Group Name', class: 'form-control' %>
+		</div>
+
+		<%= f.submit class: 'btn btn-success' %>
+
+	<% end %>
+<% else %>
+	<h3> <%= link_to "Sign In", new_user_session_path %> and start a group! </h3>
+<% end %>
+
+<%= @group.errors[:name][0] %>
+<%= @group.errors[:user_id][0] %>
