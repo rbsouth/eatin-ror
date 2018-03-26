@@ -5,5 +5,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+  	@invites = User.invites.all
+  	@sender = User.find(params[:sender_id])
   end
 end

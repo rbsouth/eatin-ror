@@ -4,6 +4,12 @@
 			<h1> <%= user.first_name %> </h1>
 			<p> <%= user.username %> </p>
 			<p> <%= user.id %> </p>
+			<%= form_with model: Invite.new, data: {"parsley-validate": ''}, local: true do |f| %>
+				<%= hidden_field :type, value: 'friend request' %>
+				<%= f.hidden_field :user_id, value: user.id %>
+				<%= f.hidden_field :sender_id, value: current_user.id %>
+				<%= f.submit "Add Friend" %>
+			<% end %>
 		</div>
 	<% end %>
 </div>
