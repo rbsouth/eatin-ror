@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   # Shows all groups current user is a groupie in
   def index
     @groups = current_user.groups
+    @groupie = Groupie.new
   end
 
   # shows specified group
