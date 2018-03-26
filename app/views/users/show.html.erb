@@ -1,0 +1,9 @@
+<h1> <%= @user.first_name %> </h1>
+
+<div class="groups">
+	<% @user.groups.each do |group| %>
+		<div class="group">
+			<p> <%= group.name %> </p>
+		</div>
+	<% end %>
+</div>
