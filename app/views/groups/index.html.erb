@@ -3,6 +3,11 @@
 	<% @groups.each do |group| %>
 		<div class="group">
 			<%= group.name %>
+			<%= form_with model: @groupie, data: {"parsley-validate": ''}, local: true do |f|  %>
+				<%= f.hidden_field :user_id, value: current_user.id %>
+				<%= f.hidden_field :group_id, value: group.id %>
+				<%= f.submit "Join Group", class: 'btn btn-success' %>
+			<% end %>
 		</div>
 	<% end %>
 </div>
