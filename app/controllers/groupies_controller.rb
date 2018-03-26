@@ -4,6 +4,8 @@ class GroupiesController < ApplicationController
   	@user = User.find(groupie_params[:user_id])
   	if @group.users << @user
   		redirect_to @group
+  	else
+  		redirect_to groups_path
 	  end
   end
 
