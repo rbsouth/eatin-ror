@@ -1,6 +1,12 @@
 class InvitesController < ApplicationController
   def create
   	@invite = Invite.new(invite_params)
+    if @invite.save
+      # should eventually be ajax
+      redirect_to root_path
+    else
+      puts 'it aint wurk'
+    end
   end
 
   def destroy
