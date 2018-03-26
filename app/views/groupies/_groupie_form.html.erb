@@ -1,0 +1,5 @@
+<%= form_with model: Groupie.new, data: {"parsley-validate": ''}, local: true do |f|  %>
+	<%= f.hidden_field :user_id, required: true, value: current_user.id %>
+	<%= f.hidden_field :group_id, required: true, value: group.id %>
+	<%= f.submit "Join Group", class: 'btn btn-success' %>
+<% end %>
