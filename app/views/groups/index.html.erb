@@ -8,11 +8,7 @@
 					<li> <%= user.username %> </li>
 				<% end %>
 			</ol>
-			<%= form_with model: @groupie, data: {"parsley-validate": ''}, local: true do |f|  %>
-				<%= f.hidden_field :user_id, required: true, value: current_user.id %>
-				<%= f.hidden_field :group_id, required: true, value: group.id %>
-				<%= f.submit "Join Group", class: 'btn btn-success' %>
-			<% end %>
+			<%= render '/groupies/groupie_form', group: group %>
 		</div>
 	<% end %>
-</div>
+</div> 
