@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <p class="notice alert-success"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <% if !user_signed_in? %>
       <%= link_to "sign in", new_user_session_path %> 
     <% else %>
