@@ -2,4 +2,5 @@
 	<p> <%= sender.first_name %> wants to be friends with you </p>
 <% elsif invite.invite_type == 'group request' %>
 	<p> <%= sender.first_name %> wants you to join <%=  %> </p>
+	<%= render '/groupies/groupie_form' %>
 <% end %>
