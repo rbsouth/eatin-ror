@@ -1,6 +1,6 @@
 <h1> <%= @user.first_name %> </h1>
 <%= link_to "Add Friend", friendships_path(friend_id: @user), method: :post %>
-<%= link_to "remove", friendships_path, method: :delete %>
+
 <div class="groups">
 	<% @user.groups.each do |group| %>
 		<div class="group">
@@ -18,4 +18,9 @@
 <h1> inverse frinds </h1>
 <% @user.inverse_friends.each do |friend| %>
 	<%= friend.first_name %>
+<% end %>
+
+<% @user.friendships.each do |friendship| %>
+	<%= friendship.friend.first_name %>
+	<%= link_to "remove", friendship_url(friendship), method: :delete %>
 <% end %>
