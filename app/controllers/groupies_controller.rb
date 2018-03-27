@@ -10,6 +10,8 @@ class GroupiesController < ApplicationController
   end
 
   def destroy
+    Groupie.find(params[:id]).destroy
+    redirect_to groups_path
   end
 
   private

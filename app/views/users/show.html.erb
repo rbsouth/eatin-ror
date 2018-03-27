@@ -15,11 +15,11 @@
 <% @user.friends.each do |friend| %>
 	<%= friend.first_name %>
 <% end %>
-<h1> inverse frinds </h1>
+<h1> inverse friends </h1>
 <% @user.inverse_friends.each do |friend| %>
 	<%= friend.first_name %>
 <% end %>
-
+<h1> Friendships </h1>
 <% @user.friendships.each do |friendship| %>
 	<%= friendship.friend.first_name %>
 	<%= link_to "remove", friendship_url(friendship), method: :delete %>

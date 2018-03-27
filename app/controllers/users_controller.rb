@@ -3,12 +3,13 @@ class UsersController < ApplicationController
   	@users = User.all
   end
 
-  def show
+  def show 
   	@user = User.find(params[:id])
   	@invites = @user.invites.all
   	if @invites.count > 0
 	  	@invite = Invite.find(params[:id])
 	  	@sender = User.find_by(id: @invite.sender_id)	
+      @group = Group.find_by(id: @invite.group_id)
   	end
   end
 end
