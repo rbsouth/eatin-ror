@@ -18,3 +18,27 @@
 	@import 'groupies';
 	@import 'friendships';
 	@import 'challenges';
+
+	.navbar {
+		height: 150px;
+	}
+
+	html, body {
+		background: #6a3093;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		color: white;
+	}
+
+	.navbar-toggler:not(:disabled):not(.disabled) {
+		height: 90px;
+    width: 90px;
+	}
+
+	.navbar-light .navbar-toggler-icon {
+		height: 75px;
+    width: 65px;
+	}
+	.collapse.show {
+		background: #f8f9fa;
+	}
