@@ -14,4 +14,12 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def friendship_requests
+    Friendship.where(friend_id: self.id).where(accepted: false)
+  end
+
+  def accept_friendship(user_id)
+    Friendship.find_by(user_id: user_id, friend_id: self.id).update_attributes(accepted: true)
+  end
 end
