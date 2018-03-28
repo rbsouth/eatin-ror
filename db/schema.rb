@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_26_042658) do
+ActiveRecord::Schema.define(version: 2018_03_28_201922) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "location"
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 2018_03_26_042658) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "group_id"
-    t.string "invite_type"
     t.index ["user_id"], name: "index_invites_on_user_id"
   end
 

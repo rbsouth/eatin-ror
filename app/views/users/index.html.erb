@@ -6,11 +6,7 @@
 			<p> <%= user.id %> </p>
 			<%= link_to "See User", user_path(user) %>
 			<% if current_user %>
-				<%= form_with model: Invite.new, data: {"parsley-validate": ''}, local: true do |f| %>
-					<%= f.hidden_field :invite_type, required: true, value: "friend request" %>
-					<%= f.hidden_field :user_id, required: true, value: user.id %>
-					<%= f.hidden_field :sender_id, required: true, value: current_user.id %>
-					<%= f.submit "Add Friend" %>
+				<%= link_to "Add Friend", friendships_path(friend_id: sender), method: :post %>
 				<% end %>
 			<% end %>
 		</div>
