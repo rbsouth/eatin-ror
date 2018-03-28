@@ -1,12 +1,14 @@
-<div class="group">
+<div class="group-info">
 	<h1> <%= @group.name %> </h1>
 </div>
 <div class="users">
 	<% @group.users.each do |user| %>
-		<% if user.first_name == current_user.first_name %>
-			<p> You </p>
-		<% else %>
-			<p> <%= user.first_name %> </p>	
-		<% end %>
+		<div class="user">
+			<% if user.first_name == current_user.first_name %>
+				<p> You </p>
+			<% else %>
+				<p> <%= user.first_name %> </p>	
+			<% end %>
+		</div>
 	<% end %>
 </div>
