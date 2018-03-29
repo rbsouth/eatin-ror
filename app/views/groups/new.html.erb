@@ -6,6 +6,10 @@
 			<%= f.text_field :name, reqired: true, placeholder: 'Group Name', class: 'form-control' %>
 		</div>
 
+		<div class="form-group">
+			<%= f.text_field :central_location, required: true, placeholder: 'Group Central Location', class: 'form-control' %>
+		</div>
+
 		<%= f.submit class: 'btn btn-success' %>
 
 	<% end %>

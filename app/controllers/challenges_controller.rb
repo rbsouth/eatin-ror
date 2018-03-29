@@ -9,7 +9,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    https://maps.googleapis.com/maps/api/geocode/json?address=
+    Challenge.new()
   end
 
   def edit

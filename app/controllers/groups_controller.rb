@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  require 'net/http'
   # Shows all groups current user is a groupie in
   def index
     @groups = current_user.groups
@@ -7,6 +8,7 @@ class GroupsController < ApplicationController
   # shows specified group
   def show
     @group = current_user.groups.find(params[:id])
+    @gmaps_api_response = Net::HTTP.get_response(URI.parse("https://maps.googleapis.com/maps/api/geocode/json?address=saltlakecity")).body
   end
 
   # CREATED_GROUPS defined in model, allows admin privilages
@@ -47,6 +49,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:user_id, :name)
+    params.require(:group).permit(:user_id, :name, :central_location)
   end
 end
