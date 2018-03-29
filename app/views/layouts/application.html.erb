@@ -35,7 +35,9 @@
         </ul>
       </div>
     </nav>
-    <h5> Welcome <%= current_user.first_name %> </h5>
+    <% if user_signed_in? %>
+      <h5> Welcome <%= current_user.first_name %> </h5>   
+    <% end %>
     <p class="notice alert-success"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
