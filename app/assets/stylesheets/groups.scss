@@ -1,3 +1,42 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.group-info {
+  text-align: center;
+  font-size: 100px;
+}
+
+.challenge-wrapper {
+	height: 800px;
+	width: 300px;
+}
+
+.user {
+  font-size: 50px;
+}
+
+.challenge-image {
+  height: 300px;
+  position: relative;
+  top: 10%;
+  left: 5%;
+}
+
+.eatin-wrapper {
+  height: 400px;
+  width: 800px;
+  position: relative;
+  background: #373779c9;
+  border-radius: 50px;
+  box-shadow: inset 0px 0px 18px 2px #0000008c;
+  left: 30%;
+}
+
+.members-wrapper {
+	height: 500px;
+}
+
+.users {
+  background: #69228a52;
+  border-radius: 5px;
+}

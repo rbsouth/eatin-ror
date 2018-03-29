@@ -22,8 +22,7 @@
               <%= link_to "sign in", new_user_session_path, class: 'nav-link' %> 
             </li>
           <% else %>
-            <h5> Welcome <%= current_user.first_name %> </h5>
-            <li class="nav-item active">
+            <li class="nav-item">
               <%= link_to "profile", user_path(current_user.id), class: 'nav-link' %>
             </li>
               <li class="nav-item">
@@ -33,19 +32,10 @@
               <%= link_to "groups", groups_path, class: 'nav-link' %>
             </li>
           <% end %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
         </ul>
       </div>
     </nav>
+    <h5> Welcome <%= current_user.first_name %> </h5>
     <p class="notice alert-success"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

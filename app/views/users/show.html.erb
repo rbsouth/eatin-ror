@@ -9,13 +9,13 @@
 	<% end %>
 </div>
 <% if @user == current_user %>
-<%= render @invites, sender: @sender %>
-	
-<h1> requests </h1>
-<% @user.friendship_requests.each do |request| %>
-	<%= request.user.first_name %>
-	<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
-<% end %>
+	<%= render @invites, sender: @sender %>
+		
+	<h1> requests </h1>
+	<% @user.friendship_requests.each do |request| %>
+		<%= request.user.first_name %>
+		<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
+	<% end %>
 <% end %>
 
 <h1> friends </h1>
