@@ -1,14 +1,22 @@
 <div class="group-info">
 	<p> <%= @group.name %> </p>
 </div>
-<div class="users">
-	<% @group.users.each do |user| %>
-		<div class="user">
-			<% if user.first_name == current_user.first_name %>
-				<p> You </p>
-			<% else %>
-				<p> <%= user.first_name %> </p>	
-			<% end %>
-		</div>
-	<% end %>
+
+<div class="challenge-wrapper">
+	<%= image_tag '' %>
+</div>
+<div class="members-wrapper row">
+	<div class="col-3"></div>
+	<div class="users col-6">
+		<% @group.users.each do |user| %>
+			<div class="user">
+				<% if user.first_name == current_user.first_name %>
+					<p> You </p>
+				<% else %>
+					<p> <%= user.first_name %> </p>	
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	<div class="col-3"></div>
 </div>
