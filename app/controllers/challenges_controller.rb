@@ -9,6 +9,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
+    Challenge.new()
   end
 
   def edit
