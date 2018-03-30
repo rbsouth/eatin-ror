@@ -2,17 +2,10 @@ class Group < ApplicationRecord
 	has_many :groupies, dependent: :destroy
 	has_many :users, through: :groupies
 
-	before_validation :radius_max
-
 	validates :name, :central_location, :latitude, :longitude, :radius, :length_unit, presence: true
 	validates :name, uniqueness: { scope: [:user_id] }
 	validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 5, less_than_or_equal_to: 81 }
-	validates :latitude, :longitude, numericality: { only_integer: true }
-
-	def radius_max
-		if params[:radius] > 81
-			params[:radius] = 80
-		end
-	end
+	validates :latitude , numericality: { greater_than_or_equal_to:  -90, less_than_or_equal_to:  90 }
+	validates :longitude, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
 end
