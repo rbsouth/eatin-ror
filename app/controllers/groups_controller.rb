@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
     @longitude = @gmaps_api_response['results'][0]['geometry']['location']['lng']
     @group = current_user.created_groups.new(user_id: group_params[:user_id], name: group_params[:name], central_location: group_params[:central_location], latitude: @latitude, longitude: @longitude)
     # adds group to users groups or rerenders page
-    if @group.save
+    if @group.save!
       current_user.groups << @group
       redirect_to @group
     else
