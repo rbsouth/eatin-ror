@@ -11,7 +11,7 @@ class User < ApplicationRecord
 	has_many :inverse_friends, through: :inverse_friendships, source: :user
   
   validates :first_name, :username, :email, :password, presence: true
-  validates :email, :uniqueness
+  validates :email, uniqueness: true
   validates :password, length: {minimum: 6}
 
   devise :database_authenticatable, :registerable,
