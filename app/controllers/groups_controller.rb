@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  require 'net/http'
+  require 'open-uri'
   # Shows all groups current user is a groupie in
   def index
     @groups = current_user.groups
@@ -8,7 +8,6 @@ class GroupsController < ApplicationController
   # shows specified group
   def show
     @group = current_user.groups.find(params[:id])
-    @gmaps_api_response = Net::HTTP.get_response(URI.parse("https://maps.googleapis.com/maps/api/geocode/json?address=saltlakecity")).body
   end
 
   # CREATED_GROUPS defined in model, allows admin privilages
@@ -19,15 +18,15 @@ class GroupsController < ApplicationController
 
   # creates group
   def create
-    p params
-    @group = current_user.created_groups.new(group_params)
+    @gmaps_api_response = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address=" + group_params[:central_location]).read)
+    @latitude = @gmaps_api_response['results'][0]['geometry']['location']['lat']
+    @longitude = @gmaps_api_response['results'][0]['geometry']['location']['lng']
+    @group = current_user.created_groups.new(user_id: group_params[:user_id], name: group_params[:name], central_location: group_params[:central_location], latitude: @latitude, longitude: @longitude)
+    # adds group to users groups or rerenders page
     if @group.save
-      # adds user into group or rerenders page
       current_user.groups << @group
-      puts "yay"
       redirect_to @group
     else
-      puts "noooooo"
       render :new
     end
   end
@@ -49,6 +48,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:user_id, :name, :central_location)
+    params.require(:group).permit(:user_id, :name, :central_location, :latitude, :longitude)
   end
 end
