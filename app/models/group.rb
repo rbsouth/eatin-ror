@@ -4,5 +4,6 @@ class Group < ApplicationRecord
 
 	validates :name, :central_location, :latitude, :longitude, :radius, presence: true
 	validates :name, uniqueness: { scope: [:user_id] }
+	validates :radius, numericality: { only_integer: true, greater_than_or_equal_to: 5, less_than_or_equal_to: 81 }
 	# validates :latitude, :longitude, numericality: { only_integer: true }
 end
