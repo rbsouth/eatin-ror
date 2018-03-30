@@ -10,8 +10,8 @@ class Group < ApplicationRecord
 	validates :latitude, :longitude, numericality: { only_integer: true }
 
 	def radius_max
-		if :radius > 81
-			:radius = 80
+		if params[:radius] > 81
+			params[:radius] = 80
 		end
 	end
 
