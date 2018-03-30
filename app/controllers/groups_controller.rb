@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     @latitude = @gmaps_api_response['results'][0]['geometry']['location']['lat']
     @longitude = @gmaps_api_response['results'][0]['geometry']['location']['lng']
     if group_params[:length_unit] == 'Miles'
-      @radius = group_params[:radius] / 
+      @radius = group_params[:radius] * 
       
     else
       
