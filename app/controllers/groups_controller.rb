@@ -18,10 +18,20 @@ class GroupsController < ApplicationController
 
   # creates group
   def create
-    @gmaps_api_response = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address=" + group_params[:central_location]).read)
+    @gmaps_api_response = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address=" + group_params[:central_location] + ",+CA&key=AIzaSyA4wHzWElVr4wsK1qPlbE-t59ZMb_LiXVQ").read)
     @latitude = @gmaps_api_response['results'][0]['geometry']['location']['lat']
     @longitude = @gmaps_api_response['results'][0]['geometry']['location']['lng']
-    @group = current_user.created_groups.new(user_id: group_params[:user_id], name: group_params[:name], central_location: group_params[:central_location], latitude: @latitude, longitude: @longitude)
+    if group_params[:length_unit] == 'Miles'
+      @radius = group_params[:radius].to_i
+      @radius = @radius * 1.60934
+      @radius = @radius.round
+    else
+      @radius = group_params[:radius]
+    end
+    if @radius > 81
+      @radius = 80
+    end
+    @group = current_user.created_groups.new(user_id: group_params[:user_id], name: group_params[:name], central_location: group_params[:central_location], length_unit: group_params[:length_unit], radius: @radius, latitude: @latitude, longitude: @longitude)
     # adds group to users groups or rerenders page
     if @group.save!
       current_user.groups << @group
@@ -48,6 +58,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:user_id, :name, :central_location, :latitude, :longitude)
+    params.require(:group).permit(:user_id, :name, :central_location, :latitude, :longitude, :radius, :length_unit)
   end
 end

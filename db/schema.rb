@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_29_233519) do
+ActiveRecord::Schema.define(version: 2018_03_30_080200) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "location"
@@ -26,15 +26,16 @@ ActiveRecord::Schema.define(version: 2018_03_29_233519) do
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "friend_id"
+    t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "accepted", default: false
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "groupies", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
+    t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_groupies_on_group_id"
@@ -44,21 +45,14 @@ ActiveRecord::Schema.define(version: 2018_03_29_233519) do
   create_table "groups", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "central_location"
-    t.integer "latitude"
-    t.integer "longitude"
-    t.index ["user_id"], name: "index_groups_on_user_id"
-  end
-
-  create_table "invites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "sender_id"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.integer "radius"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "group_id"
-    t.index ["user_id"], name: "index_invites_on_user_id"
+    t.string "length_unit"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

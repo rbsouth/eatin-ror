@@ -3,6 +3,7 @@ class CreateGroupies < ActiveRecord::Migration[5.2]
     create_table :groupies do |t|
       t.references :user, foreign_key: true
       t.references :group, foreign_key: true
+      t.boolean :accepted, default: false
 
       t.timestamps
     end
