@@ -86,6 +86,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -93,6 +95,8 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (1.0.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -117,6 +121,9 @@ GEM
       mimemagic (~> 0.3.2)
     metaclass (0.0.4)
     method_source (0.9.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
@@ -125,7 +132,7 @@ GEM
       metaclass (~> 0.0.1)
     msgpack (1.2.4)
     multi_json (1.13.1)
-    nifty-generators (0.4.6)
+    netrc (0.11.0)
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -169,6 +176,10 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.6)
@@ -208,6 +219,13 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
+    unirest (1.0.8)
+      addressable
+      json
+      rest-client
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -238,7 +256,6 @@ DEPENDENCIES
   json
   listen (>= 3.0.5, < 3.2)
   mocha
-  nifty-generators
   parsley-rails
   puma (~> 3.11)
   rails (~> 5.2.0.rc2)
@@ -250,6 +267,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  unirest
   web-console (>= 3.3.0)
 
 RUBY VERSION
