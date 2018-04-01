@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_30_080200) do
+ActiveRecord::Schema.define(version: 2018_04_01_021947) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "location"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2018_03_30_080200) do
     t.integer "groupie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.index ["groupie_id"], name: "index_challenges_on_groupie_id"
   end
 
