@@ -1,5 +1,10 @@
 class ChallengesController < ApplicationController
   def index
+    @food_api_response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?number=1",
+      headers:{
+        "X-Mashape-Key" => "67QSfPqlNEmshpM6jlpdtEGuN4YJp1HNB1DjsnETnZfKYTb12X",
+        "X-Mashape-Host" => "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
+      }
   end
 
   def show
@@ -39,12 +44,19 @@ class ChallengesController < ApplicationController
     @maxRows = '50'
     @username = 'rbsouth'
     @groups.each do |group|
-      @radius = group.radius
-      @latitude = group.latitude
-      @longitude = group.longitude
-      @geonames_api_call = JSON.parse(open('http://api.geonames.org/findNearbyPlaceNameJSON?lat='@latitude'&lng='@longitude'&style='@style'&cities='@size'&radius='@radius'&maxRows='@maxRows'&username='@username).read)
-      @city_name = @geonames_api_call.geonames.sample.name
-      Challenge.new()
+      @radius = group.radius.to_s
+      @latitude = group.latitude.to_s
+      @longitude = group.longitude.to_s
+      @geonames_api_call = JSON.parse(open("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + @latitude + "&lng=" + @longitude + "&style=" + @style + "&cities=" + @size + "&radius=" + @radius + "&maxRows=" + @maxRows + "&username=" + @username).read)
+      @city = @geonames_api_call["geonames"].sample
+      @city_name = @city["name"]
+      @city_lat = @city["lat"].to_f
+      @city_lng = @city["lng"].to_f
+      response = Unirest.get "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?number=1",
+      headers:{
+        "X-Mashape-Key" => "67QSfPqlNEmshpM6jlpdtEGuN4YJp1HNB1DjsnETnZfKYTb12X",
+        "X-Mashape-Host" => "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
+      }
     end
   end
 
