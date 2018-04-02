@@ -19,6 +19,7 @@
   border: 1px solid black;
   border-radius: 15px;
   background: #433583;
+  overflow: scroll;
 }
 
  // group show page
@@ -61,17 +62,21 @@
   // Create another toggleable class to create accordian effect
   // Change min-height to max-height?
   // Set .user to display: none; ?
-%members-wrapper {
+.members-wrapper {
   margin: 0px 0px 50px 0px !important;
+  transition: height 0.7s ease;
 }
 
 .members-wrapper-closed {
-  @extend members-wrapper;
+  @extend .members-wrapper;
+  height: 122px;
+  overflow: hidden;
 }
 
 .members-wrapper-open {
-  @extend members-wrapper;
-  min-height: 500px;
+  @extend .members-wrapper;
+  height: 500px;
+
 }
 
  // new group page
