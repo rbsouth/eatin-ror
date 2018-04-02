@@ -1,29 +1,35 @@
-<% if user_signed_in? %>
-	
-	<%= form_with model: @group, data: {"parsley-validate": ''}, local: true do |f| %>
+<div class="col-10 new-group">
+	<% if user_signed_in? %>
 		
-		<div class="form-group">
-			<%= f.text_field :name, reqired: true, placeholder: 'Group Name', class: 'form-control' %>
-		</div>
+		<%= form_with model: @group, data: {"parsley-validate": ''}, local: true do |f| %>
 
-		<div class="form-group">
-			<%= f.text_field :central_location, required: true, placeholder: 'Group Central Location', class: 'form-control' %>
-		</div>
-
-		<div class="form-group">
-			<%= f.select :radius, [5, 10, 15, 25, 50], {}, {class: 'form-control'} %>
-		</div>
-
-		<div class="form-group">
-			<%= f.select :length_unit, ['Miles', 'Kilometers'], {}, {class: 'form-control'} %>
-		</div>
-
-		<%= f.submit class: 'btn btn-success' %>
-
+			<div class="form-title">
+				<p> EATIN </p>
+			</div>
+			
+			<div class="form-group">
+				<%= f.text_field :name, reqired: true, placeholder: 'Group Name', class: 'form-control' %>
+			</div>
+	
+			<div class="form-group">
+				<%= f.text_field :central_location, required: true, placeholder: 'Group Central Location', class: 'form-control' %>
+			</div>
+	
+			<!-- <div class="form-group">
+			</div> -->
+	
+			<div class="form-group group-selectors">
+				<%= f.select :radius, [10, 15, 25, 50], {class: 'selector-font'}, {class: 'radius-selector'} %>
+				<%= f.select :length_unit, ['Miles', 'Kilometers'], {class: 'selector-font'}, {class: 'unit-selector'} %>
+			</div>
+	
+			<%= f.submit class: 'btn' %>
+	
+		<% end %>
+	<% else %>
+		<h3> <%= link_to "Sign In", new_user_session_path %> and start a group! </h3>
 	<% end %>
-<% else %>
-	<h3> <%= link_to "Sign In", new_user_session_path %> and start a group! </h3>
-<% end %>
-
-<%= @group.errors[:name][0] %>
-<%= @group.errors[:user_id][0] %>
+	
+	<%= @group.errors[:name][0] %>
+	<%= @group.errors[:user_id][0] %>
+</div>

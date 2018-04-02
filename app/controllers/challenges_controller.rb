@@ -78,7 +78,7 @@ class ChallengesController < ApplicationController
         http.request(@request)
       end
       group.groupies.each do |groupie|
-        groupie.challenges.new()
+        groupie.challenges.new(location: )
       end
     end
   end
