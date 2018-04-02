@@ -10,6 +10,7 @@
 <div class="members-wrapper row">
 	<div class="col-3"></div>
 	<div class="users col-6">
+		<p> In this Group </p>
 		<% @group.users.each do |user| %>
 			<div class="user">
 				<% if user.first_name == current_user.first_name %>
