@@ -61,3 +61,31 @@
   height: 300px;
   border-radius: 20px;
 }
+
+.user-view {
+	text-align: center;
+
+	.user-photo {
+		height: 400px;
+		width: 400px;
+		background: #80808082;
+    position: relative;
+    left: 30%;
+	}
+
+	.first-name {
+		font-size: 150px;
+	}
+
+	.username {
+		font-size: 25px;
+	}
+
+	.requests {
+		text-align: left !important;
+	}
+
+	.groups {
+		@extend .requests;
+	}
+}
