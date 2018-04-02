@@ -2,18 +2,18 @@ class ChallengesController < ApplicationController
   require 'net/http'
   require 'uri'
   def index
-    # @uri = URI.parse("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?number=1")
-    # @request = Net::HTTP::Get.new(@uri)
-    # @request["X-Mashape-Key"] = "67QSfPqlNEmshpM6jlpdtEGuN4YJp1HNB1DjsnETnZfKYTb12X"
-    # @request["X-Mashape-Host"] = "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
+    @uri = URI.parse("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?number=1")
+    @request = Net::HTTP::Get.new(@uri)
+    @request["X-Mashape-Key"] = "67QSfPqlNEmshpM6jlpdtEGuN4YJp1HNB1DjsnETnZfKYTb12X"
+    @request["X-Mashape-Host"] = "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
 
-    # req_options = {
-    #   use_ssl: @uri.scheme == "https",
-    # }
+    req_options = {
+      use_ssl: @uri.scheme == "https",
+    }
 
-    # @response = Net::HTTP.start(@uri.hostname, @uri.port, req_options) do |http|
-    #   http.request(@request)
-    # end
+    @response = Net::HTTP.start(@uri.hostname, @uri.port, req_options) do |http|
+      http.request(@request)
+    end
   end
 
   def show
