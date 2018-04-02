@@ -9,7 +9,10 @@
 </div>
 <div class="row members-wrapper justify-content-center">
 	<div class="users col-10">
-		<p class="group-members-title"> In this Group </p>
+		<div class="group-members-title"> 
+			In this Group
+			<div class="accordian-toggle"></div>
+		</div>
 		<% @group.users.each do |user| %>
 			<div class="user">
 				<% if user.first_name == current_user.first_name %>
