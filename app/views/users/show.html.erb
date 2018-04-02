@@ -1,33 +1,48 @@
-<h1> <%= @user.first_name %> </h1>
-<%= link_to "Add Friend", friendships_path(friend_id: @user), method: :post, remote: true %>
+<!-- Modal -->
+<div class="modal fade" id="inviteModal" tabindex="-1" role="dialog" aria-labelledby="inviteModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered invite-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title color-black" id="exampleModalLongTitle">Send <%= @user.first_name %> An Invite</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= link_to "Add Friend", friendships_path(friend_id: @user), method: :post, remote: true, class: 'btn friend-btn' %>
+				<div class="group-invite">
+					<%= render 'groupies/groupie_form', user: @user %>
+				</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="groups">
-	<% @user.groups.each do |group| %>
-		<div class="group">
-			<p> <%= group.name %> </p>
+<div class="user-view">
+	<div class="user-photo"></div>
+	<p class="first-name"> <%= @user.first_name %> </p>
+	<p class="username"> 
+		@<%= @user.username %> 
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inviteModal">
+	  Send an Invite
+	</button>
+	</p>
+
+	<% if @user == current_user %>
+			
+		<div class="requests">
+			<h1> requests </h1>
+			<% @user.friendship_requests.each do |request| %>
+				<%= request.user.first_name %>
+				<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
+			<% end %>
+			<div class="groups">
+				<% @user.group_invites.each do |invite| %>
+					<%= invite.group.name %>
+				<% end %>
+			</div>
 		</div>
+	
 	<% end %>
 </div>
-<% if @user == current_user %>
-	<%= render @invites, sender: @sender %>
-		
-	<h1> requests </h1>
-	<% @user.friendship_requests.each do |request| %>
-		<%= request.user.first_name %>
-		<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
-	<% end %>
-<% end %>
-
-<h1> friends </h1>
-<% @user.friends.each do |friend| %>
-	<%= friend.first_name %>
-<% end %>
-<h1> inverse friends </h1>
-<% @user.inverse_friends.each do |friend| %>
-	<%= friend.first_name %>
-<% end %>
-<h1> Friendships </h1>
-<% @user.friendships.each do |friendship| %>
-	<%= friendship.friend.first_name %>
-	<%= link_to "remove", friendship_url(friendship), method: :delete %>
-<% end %>

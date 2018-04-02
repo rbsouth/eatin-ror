@@ -1,5 +1,6 @@
 <%= form_with model: Groupie.new, data: {"parsley-validate": ''}, local: true do |f|  %>
-	<%= f.hidden_field :user_id, required: true, value: current_user.id %>
-	<%= f.hidden_field :group_id, required: true, value: group.id %>
-	<%= f.submit "Join Group", class: 'btn btn-success' %>
+	<%= f.hidden_field :user_id, required: true, value: user.id %>
+	<div class="group-select-label color-black">Select Group for Invite</div>
+	<%= f.collection_select :group_id, current_user.created_groups, :id, :name, { prompt: "Group" }, class: 'group-select' %>
+	<%= f.submit "Invite to Group", class: 'btn group-invite-btn' %>
 <% end %>

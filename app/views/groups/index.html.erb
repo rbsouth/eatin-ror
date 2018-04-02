@@ -1,14 +1,12 @@
 <div class="groups">
+	<p class="all-groups-title"> My Groups </p>
 	<% @groups.each do |group| %>
 		<div class="group">
 			<%= group.name %>
 			<h4> group members </h4>
-			<ol>
-				<% group.users.each do |user| %>
-					<li> <%= user.username %> </li>
-				<% end %>
-			</ol>
-			<%= render '/groupies/groupie_form', group: group %>
+			<% group.users.each do |user| %>
+				<p> <%= user.username %> </p>
+			<% end %>
 			<%= link_to "Go to group page", group_path(group) %>
 		</div>
 	<% end %>

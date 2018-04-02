@@ -1,3 +1,91 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.group-invite {
+	width: 100%;
+  text-align: center;
+
+	.group-select-label {
+    display: inline;
+		font-size: 42px;
+    width: 400px;
+	}
+
+	.group-select {
+    margin: 80px 0px 10px 10px;
+    height: 50px;
+    font-size: 35px;
+    width: 300px;
+    background: #80808099;
+	}
+
+	.group-invite-btn {
+		@extend .friend-btn;
+		left: 0px !important;
+		margin-top: 0px !important;
+	}
+  
+}
+
+.invite-modal {
+	max-width: 90% !important;
+  width: 90%;
+}
+
+.modal-content {
+  height: 1120px;
+
+  .modal-title {
+    font-size: 75px;
+  }
+}
+
+.modal-header .close {
+  margin: -.0rem -.5rem -1rem auto;
+}
+
+.close {
+  font-size: 7.5rem;
+  line-height: 0.5;
+}
+
+.friend-btn {
+  margin-top: 75px;
+  position: relative;
+  font-size: 100px;
+  line-height: 16rem;
+  left: 2.5%;
+  background: blueviolet;
+  color: white;
+  width: 95%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.user-view {
+	text-align: center;
+
+	.user-photo {
+		height: 400px;
+		width: 400px;
+		background: #80808082;
+    position: relative;
+    left: 30%;
+	}
+
+	.first-name {
+		font-size: 150px;
+	}
+
+	.username {
+		font-size: 25px;
+	}
+
+	.requests {
+		text-align: left !important;
+	}
+
+	.groups {
+		@extend .requests;
+	}
+}

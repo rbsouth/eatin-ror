@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
  	resources :users, only: [:index, :show]
  	resources :groups
- 	resources :friendships, only: [:create, :destroy]
+ 	resources :friendships, only: [:create, :destroy, :index]
  	resources :groupies, only: [:create, :destroy]
  	resources :invites, only: [:create, :destroy]
  	resources :challenges

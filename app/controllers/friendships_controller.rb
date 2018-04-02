@@ -1,4 +1,9 @@
 class FriendshipsController < ApplicationController
+
+  def index
+    @user = current_user
+  end
+
   def create
     respond_to do |format|
       @friendship = current_user.friendships.new(friendship_params)

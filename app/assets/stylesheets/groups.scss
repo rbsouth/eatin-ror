@@ -41,3 +41,75 @@
   border-radius: 5px;
   text-align: center;
 }
+
+.new-group {
+  position: relative;
+  background: #14133eab;
+  left: 8.5%;
+  padding: 40px;
+  border-radius: 15px;
+
+  .form-title {
+    text-align: center;
+    font-size: 140px;
+    margin-bottom: 50px;
+  }
+  
+  .form-control {
+    font-size: 4rem;
+    line-height: 2;
+    border-radius: 0.50rem;
+  }
+
+  .form-group {
+    margin-bottom: 80px;
+    width: 736px;
+  }
+
+  .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    position: relative;
+    height: 180px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 78px;
+    background: #2143ff87;
+    color: white;
+    border: blue;
+    margin-bottom: 14px;
+    line-height: 1px;
+  }
+  .radius-selector {
+    height: 126px;
+    width: 200px;
+    background: white;
+    font-size: 78px;
+    color: #6b757c;
+    position: relative;
+    right: 36px;
+    border-radius: 9px;
+    option {
+      font-size: 12px;
+    }
+  }
+
+  .unit-selector {
+    @extend .radius-selector;
+    width: 457px;
+    margin-left: 73px;
+  }
+
+  .group-selectors {
+    position: relative;
+    left: 5%;
+  }
+}
+
+.groups {
+  text-align: center;
+
+  .all-groups-title {
+    font-size: 100px;
+  }
+  
+}
