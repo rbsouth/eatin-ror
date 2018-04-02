@@ -7,18 +7,29 @@
 		<%= image_tag 'eatin.svg', class: "challenge-image" %>
 	</div>
 </div>
-<div class="members-wrapper row">
-	<div class="col-3"></div>
-	<div class="users col-6">
+<div class="row members-wrapper members-wrapper-closed justify-content-center">
+	<div class="users col-10">
+		<div class="group-members-title"> 
+			In this Group
+			<div class="accordian-toggle"></div>
+		</div>
 		<% @group.users.each do |user| %>
 			<div class="user">
 				<% if user.first_name == current_user.first_name %>
-					<p> You </p>
+					<p> <%= link_to "You", user_path %> </p>
 				<% else %>
-					<p> <%= user.first_name %> </p>	
+					<p> <%= user.first_name %> <%= link_to user.first_name, user_path %> </p>	
 				<% end %>
 			</div>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
+				<p class="user"> <%= @group.name %> </p>
 		<% end %>
 	</div>
-	<div class="col-3"></div>
-</div>
+</div> 

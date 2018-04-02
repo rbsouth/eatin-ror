@@ -6,20 +6,46 @@
   font-size: 100px;
 }
 
+
+.user {
+  font-size: 50px;
+  background: #ffffff45;
+  border-radius: 5px;
+  text-align: center;
+
+  a {
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.users {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 15px;
+  background: #433583;
+  overflow: hidden;
+  // overflow: scroll; not needed for mobile
+}
+
+ // group show page
+
 .challenge-wrapper {
 	height: 800px;
 	width: 300px;
 }
 
-.user {
-  font-size: 50px;
-}
+.group-members-title {
+  font-size: 75px;
 
-.challenge-image {
-  height: 300px;
-  position: relative;
-  top: 10%;
-  left: 5%;
+  .accordian-toggle {
+    position: relative;
+    background: white;
+    left: 0px;
+    bottom: 95px;
+    height: 50px;
+    width: 50px;
+  }
 }
 
 .eatin-wrapper {
@@ -32,15 +58,33 @@
   left: 30%;
 }
 
-.members-wrapper {
-	height: 500px;
+.challenge-image {
+  height: 300px;
+  position: relative;
+  top: 10%;
+  left: 5%;
 }
 
-.users {
-  background: #69228a52;
-  border-radius: 5px;
-  text-align: center;
+  // Create another toggleable class to create accordian effect
+  // Change min-height to max-height?
+  // Set .user to display: none; ?
+.members-wrapper {
+  margin: 0px 0px 50px 0px !important;
+  transition: max-height 0.7s ease;
 }
+
+.members-wrapper-closed {
+  @extend .members-wrapper;
+  max-height: 122px;
+  overflow: hidden;
+}
+
+.members-wrapper-open {
+  @extend .members-wrapper;
+  max-height: 1080px;
+}
+
+ // new group page
 
 .new-group {
   position: relative;
@@ -104,6 +148,8 @@
     left: 5%;
   }
 }
+
+ // groups index page
 
 .groups {
   text-align: center;

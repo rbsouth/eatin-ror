@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_01_072351) do
+ActiveRecord::Schema.define(version: 2018_04_01_021947) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "location"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2018_04_01_072351) do
     t.datetime "updated_at", null: false
     t.decimal "latitude"
     t.decimal "longitude"
-    t.text "recipe_data"
     t.index ["groupie_id"], name: "index_challenges_on_groupie_id"
   end
 
