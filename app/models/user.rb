@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def accept_friendship(user_id)
     Friendship.find_by(user_id: user_id, friend_id: self.id).update_attributes(accepted: true)
   end
+
+  def group_invites
+    Groupie.where(user_id: self.id).where(accepted: false)
+  end
 end

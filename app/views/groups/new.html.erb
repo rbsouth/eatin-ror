@@ -19,8 +19,8 @@
 			</div> -->
 	
 			<div class="form-group group-selectors">
-				<%= f.select :radius, [10, 15, 25, 50], {class: 'selector-font'}, {class: 'radius-selector'} %>
-				<%= f.select :length_unit, ['Miles', 'Kilometers'], {class: 'selector-font'}, {class: 'unit-selector'} %>
+				<%= f.select :radius, [10, 15, 25, 50], {}, {class: 'radius-selector'} %>
+				<%= f.select :length_unit, ['Miles', 'Kilometers'], {}, {class: 'unit-selector'} %>
 			</div>
 	
 			<%= f.submit class: 'btn' %>
