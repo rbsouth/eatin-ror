@@ -12,6 +12,11 @@
   background: #ffffff45;
   border-radius: 5px;
   text-align: center;
+
+  a {
+    color: inherit;
+    cursor: pointer;
+  }
 }
 
 .users {
@@ -19,7 +24,8 @@
   border: 1px solid black;
   border-radius: 15px;
   background: #433583;
-  overflow: scroll;
+  overflow: hidden;
+  // overflow: scroll; not needed for mobile
 }
 
  // group show page
@@ -64,19 +70,18 @@
   // Set .user to display: none; ?
 .members-wrapper {
   margin: 0px 0px 50px 0px !important;
-  transition: height 0.7s ease;
+  transition: max-height 0.7s ease;
 }
 
 .members-wrapper-closed {
   @extend .members-wrapper;
-  height: 122px;
+  max-height: 122px;
   overflow: hidden;
 }
 
 .members-wrapper-open {
   @extend .members-wrapper;
-  height: 500px;
-
+  max-height: 1080px;
 }
 
  // new group page
