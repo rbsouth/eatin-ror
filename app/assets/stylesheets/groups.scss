@@ -29,12 +29,7 @@
   background: #433583;
 }
 
-.challenge-image {
-  height: 300px;
-  position: relative;
-  top: 10%;
-  left: 5%;
-}
+ // group show page
 
 .eatin-wrapper {
   height: 400px;
@@ -46,9 +41,20 @@
   left: 30%;
 }
 
-.members-wrapper {
-	height: 500px;
+.challenge-image {
+  height: 300px;
+  position: relative;
+  top: 10%;
+  left: 5%;
 }
+
+  // Create another toggleable class to create accordian effect
+.members-wrapper {
+	min-height: 500px;
+  margin: 0px 0px 50px 0px !important;
+}
+
+ // new group page
 
 .new-group {
   position: relative;
@@ -112,6 +118,8 @@
     left: 5%;
   }
 }
+
+ // groups index page
 
 .groups {
   text-align: center;
