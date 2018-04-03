@@ -1,35 +1,37 @@
 <div class="group-info">
 	<p> <%= @group.name %> </p>
+	<%= link_to "New Challenge", challenges_path, method: :post %>
 </div>
 
 <div class="challenge-wrapper">
 	<div class="eatin-wrapper">
 		<%= image_tag 'eatin.svg', class: "challenge-image" %>
+		<%= image_tag 'food-choices/' %>
 	</div>
 </div>
 <div class="row members-wrapper members-wrapper-closed justify-content-center">
-	<div class="users col-10">
+	<div class="groupies col-10">
 		<div class="group-members-title"> 
 			In this Group
 			<div class="accordian-toggle"></div>
 		</div>
-		<% @group.users.each do |user| %>
-			<div class="user">
-				<% if user.first_name == current_user.first_name %>
-					<p> <%= link_to "You", user_path %> </p>
+		<% @group.users.each do |groupie| %>
+			<div class="groupie">
+				<% if groupie.first_name == current_user.first_name %>
+					<p> <%= link_to "You", groupie_path %> </p>
 				<% else %>
-					<p> <%= user.first_name %> <%= link_to user.first_name, user_path %> </p>	
+					<p> <%= groupie.first_name %> <%= link_to groupie.first_name, groupie_path %> </p>	
 				<% end %>
 			</div>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
-				<p class="user"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
+			<p class="groupie"> <%= @group.name %> </p>
 		<% end %>
 	</div>
 </div>

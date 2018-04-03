@@ -8,6 +8,8 @@ class GroupsController < ApplicationController
   # shows specified group
   def show
     @group = current_user.groups.find(params[:id])
+    @groupie = @group.users.find_by(user_id: current_user)
+    @challenge = @groupie.challenges.last
   end
 
   # CREATED_GROUPS defined in model, allows admin privilages

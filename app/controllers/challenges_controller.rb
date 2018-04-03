@@ -31,7 +31,7 @@ class ChallengesController < ApplicationController
       # Get random food
       @foods = ['any', 'burger', 'burrito', 'cake', 'candy', 'chicken', 'donut', 'fries', 'ice_cream', 'pizza', 'taco']
       group.groupies.each do |groupie|
-        groupie.challenges.new()
+        groupie.challenges.new(location: @city_name, food: @foods.sample, due_by: 24.hours.from_now, latitude: @city_lat, longitude: @city_lng)
       end
     end
   end
