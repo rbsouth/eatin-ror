@@ -6,13 +6,18 @@
 
 <div class="challenge-wrapper">
 	<div class="eatin-wrapper">
-		<%= image_tag 'eatin.svg', class: "challenge-image" %>
 		<% if @challenge %>
-			<%= image_tag 'food-choices/' + @challenge.food + '.png', class: 'food-emoji' %>
+			<div class="food-image">
+				<%= image_tag 'food-choices/' + @challenge.food + '.png', class: 'food-emoji' %>
+				</div>
 			<div class="challenge-location"> <%= @challenge.location %> </div>
 		<% end %>
 	</div>
-	<div id="map"></div>
+
+<iframe id="map" src="//www.google.com/maps/embed/v1/directions?origin=<%= @group.central_location %>
+      &destination=<%= @challenge.location %>
+      &key=AIzaSyDxEjlrSYBNlF6tMvxX2RLhVjaf3c_kras">
+  </iframe>
 </div>
 <div class="row members-wrapper members-wrapper-closed justify-content-center">
 	<div class="groupies col-10">
