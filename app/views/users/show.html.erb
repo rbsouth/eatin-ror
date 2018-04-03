@@ -20,20 +20,25 @@
 
 <div class="user-view">
 	<div class="user-photo"></div>
-	<p class="first-name"> <%= @user.first_name %> </p>
+	<div class="first-name"> <%= @user.first_name %> </div>
+	<!-- Button trigger modal -->
+	<% if @user != current_user %>
+		<button type="button" class="open-invites" data-toggle="modal" data-target="#inviteModal">
+		  Options
+		</button>
+	<% end %>
 	<p class="username"> 
 		@<%= @user.username %> 
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inviteModal">
-	  Send an Invite
-	</button>
 	</p>
-	<div class="friend-count"> <%= @user.friendships.count %> </div>
+	<div class="friend-count"> <%= @user.friendships.count %> Friends</div>
 
 	<% if @user == current_user %>
 			
 		<div class="requests">
-			<h1> requests </h1>
+			<div class="requests-title"> requests </div>
+			<% if @user.friendship_requests.count == 0 && @user.group_invites.count == 0 %>
+				NONE
+			<% end %>
 			<div class="friend-requests">
 				<% @user.friendship_requests.each do |request| %>
 					<%= request.user.first_name %>

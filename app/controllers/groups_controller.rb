@@ -1,8 +1,9 @@
 class GroupsController < ApplicationController
-  require 'open-uri'
+  require 'open-uri' 
   # Shows all groups current user is a groupie in
   def index
     @groups = current_user.groups
+    @created_groups = current_user.created_groups
   end
 
   # shows specified group
