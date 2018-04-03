@@ -9,6 +9,12 @@ class GroupiesController < ApplicationController
 	  end
   end
 
+  def update
+    @groupie = Groupie.find(params[:id])
+    @groupie.update_attributes(accepted: true)
+    redirect_to @groupie.group
+  end
+
   def destroy
     Groupie.find(params[:id]).destroy
     redirect_to groups_path

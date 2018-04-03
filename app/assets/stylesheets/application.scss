@@ -18,6 +18,9 @@
 	@import 'groupies';
 	@import 'friendships';
 	@import 'challenges';
+	@import url('https://fonts.googleapis.com/css?family=Montserrat');
+	@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates');
+
 
 	.navbar {
 		height: 150px;
@@ -32,6 +35,7 @@
 		background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
 		background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		color: white;
+		font-family: "Montserrat", "Montserrat Alternates";
 	}
 
 	.navbar-toggler:not(:disabled):not(.disabled) {

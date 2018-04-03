@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  	resources :users, only: [:index, :show]
  	resources :groups
  	resources :friendships, only: [:create, :destroy, :index]
- 	resources :groupies, only: [:create, :destroy]
+ 	resources :groupies, only: [:create, :update, :destroy]
  	resources :invites, only: [:create, :destroy]
  	resources :challenges
 	root "users#index"

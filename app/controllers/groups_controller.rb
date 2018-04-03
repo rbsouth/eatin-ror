@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   # shows specified group
   def show
     @group = current_user.groups.find(params[:id])
-    @groupie = @group.groupies.find_by(user_id: current_user.id)
+    @groupie = @group.groupies.find_by(user_id: current_user.id, accepted: true)
     @challenge = @groupie.challenges.last
   end
 
@@ -37,6 +37,7 @@ class GroupsController < ApplicationController
     # adds group to users groups or rerenders page
     if @group.save!
       current_user.groups << @group
+      @group.groupies.update_attributes(accepted: true)
       redirect_to @group
     else
       render :new

@@ -12,3 +12,13 @@ $ ->
 		else if memberWrap.hasClass("members-wrapper-open")
 			memberWrap.removeClass("members-wrapper-open")
 			memberWrap.addClass("members-wrapper-closed")
+
+	map = undefined
+
+	() ->
+	  map = new (google.maps.Map)(document.getElementById('map'),
+	    center:
+	      lat: -34.397
+	      lng: 150.644
+	    zoom: 8)
+	  return
