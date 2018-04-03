@@ -2,6 +2,10 @@ class ChallengesController < ApplicationController
   require 'net/http'
   require 'uri'
   def index
+    @group = Group.find(params[:id])
+    @groupie = @group.groupies.first
+    @challenges = @groupie.challenges
+    @completed_challenges = @challenges.where(complete: true)
   end
 
   def show
@@ -33,12 +37,13 @@ class ChallengesController < ApplicationController
       group.groupies.each do |groupie|
         @challenge = groupie.challenges.new(location: @city_name, food: @foods.sample, due_by: 24.hours.from_now, latitude: @city_lat, longitude: @city_lng)
         if @challenge.save
-          render :new
+          puts 'successfully created challenge for groupie'
         else
-          redirect_to challenges_path
+          puts 'something went wrong'
         end
       end
     end
+    redirect_to @groups
   end
 
   def edit

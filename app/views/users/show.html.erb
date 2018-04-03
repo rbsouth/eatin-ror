@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-dialog-centered invite-modal" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <p class="modal-title color-black" id="exampleModalLongTitle">Send <%= @user.first_name %> An Invite</p>
+        <p class="modal-title color-black" id="exampleModalLongTitle">Send <%= @user.first_name %> An Invite </p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -28,18 +28,24 @@
 	  Send an Invite
 	</button>
 	</p>
+	<div class="friend-count"> <%= @user.friendships.count %> </div>
 
 	<% if @user == current_user %>
 			
 		<div class="requests">
 			<h1> requests </h1>
-			<% @user.friendship_requests.each do |request| %>
-				<%= request.user.first_name %>
-				<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
-			<% end %>
-			<div class="groups">
+			<div class="friend-requests">
+				<% @user.friendship_requests.each do |request| %>
+					<%= request.user.first_name %>
+					<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
+				<% end %>
+			</div>
+			<div class="group-requests">
+				<!-- invite is groupie with accepted: false -->
 				<% @user.group_invites.each do |invite| %>
 					<%= invite.group.name %>
+					<%= link_to "Join Group", groupie_path(invite) %>
+					<%= link_to "Decline", groupie_path(invite), method: :destroy %>
 				<% end %>
 			</div>
 		</div>

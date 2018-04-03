@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .group-info {
   text-align: center;
-  font-size: 100px;
+  font-size: 50px;
+
+  .group-name {
+    font-size: 100px;
+  }
 }
 
 .groupie {
@@ -39,8 +43,19 @@
     left: 377px;
     bottom: 275px;
   }
+
+  .challenge-location {
+    position: absolute;
+    bottom: 103px;
+    left: 420px;
+    font-size: 45px;
+  }
+
 }
 
+#map {
+  height: 500px;
+}
 
 .group-members-title {
   font-size: 75px;
