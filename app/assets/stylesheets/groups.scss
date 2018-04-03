@@ -35,26 +35,35 @@
 
 .challenge-wrapper {
 	height: 800px;
-	width: 300px;
+	width: 100%;
   
+  .food-image {
+    position: absolute;
+    bottom: 37%;
+    left: 25%;
+    height: 300px;
+    width: 300px;
+  }
+
   .food-emoji  {
-    height: 129px;
-    position: relative;
-    left: 377px;
-    bottom: 275px;
+    height: 100%;
   }
 
   .challenge-location {
     position: absolute;
-    bottom: 103px;
-    left: 420px;
-    font-size: 45px;
+    bottom: 61px;
+    border-bottom: 10px solid white;
+    left: 17%;
+    font-size: 60px;
   }
 
 }
 
 #map {
   height: 500px;
+  width: 822px;
+  position: relative;
+  left: 8%;
 }
 
 .group-members-title {
@@ -71,13 +80,13 @@
 }
 
 .eatin-wrapper {
-  height: 400px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
   position: relative;
   background: #373779c9;
   border-radius: 50px;
   box-shadow: inset 0px 0px 18px 2px #0000008c;
-  left: 30%;
+  left: 19%;
 }
 
 .challenge-image {
