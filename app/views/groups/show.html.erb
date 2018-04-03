@@ -6,7 +6,10 @@
 <div class="challenge-wrapper">
 	<div class="eatin-wrapper">
 		<%= image_tag 'eatin.svg', class: "challenge-image" %>
-		<%= image_tag 'food-choices/' %>
+		<% if @challenge %>
+			<%= image_tag 'food-choices/' + @challenge.food + '.png', class: 'food-emoji' %>
+			<div class="challenge-location"> <%= @challenge.location %> </div>
+		<% end %>
 	</div>
 </div>
 <div class="row members-wrapper members-wrapper-closed justify-content-center">

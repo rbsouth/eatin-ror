@@ -13,7 +13,7 @@ class ChallengesController < ApplicationController
   def create
     @groups = Group.all
     @style = 'short'
-    @size = 'cities5000'
+    @size = 'cities1000'
     @maxRows = '50'
     @username = 'rbsouth'
     @groups.each do |group|
@@ -31,7 +31,12 @@ class ChallengesController < ApplicationController
       # Get random food
       @foods = ['any', 'burger', 'burrito', 'cake', 'candy', 'chicken', 'donut', 'fries', 'ice_cream', 'pizza', 'taco']
       group.groupies.each do |groupie|
-        groupie.challenges.new(location: @city_name, food: @foods.sample, due_by: 24.hours.from_now, latitude: @city_lat, longitude: @city_lng)
+        @challenge = groupie.challenges.new(location: @city_name, food: @foods.sample, due_by: 24.hours.from_now, latitude: @city_lat, longitude: @city_lng)
+        if @challenge.save
+          render :new
+        else
+          redirect_to challenges_path
+        end
       end
     end
   end

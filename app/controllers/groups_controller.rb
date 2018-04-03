@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   # shows specified group
   def show
     @group = current_user.groups.find(params[:id])
-    @groupie = @group.users.find_by(user_id: current_user)
+    @groupie = @group.groupies.find_by(user_id: current_user.id)
     @challenge = @groupie.challenges.last
   end
 
