@@ -1,6 +1,8 @@
 <div class="group-info">
 	<strong><p class="group-name"> <%= @group.name %> </p></strong>
-	<div class="completed-challenges-count"> <%= @groupie.challenges.where(complete: true).count %> Completed Challenges </div>
+	<% if @groupie %>
+		<div class="completed-challenges-count"> <%= @groupie.challenges.where(complete: true).count %> Completed Challenges </div>
+	<% end %>
 	<%= link_to "New Challenge", challenges_path, method: :post %>
 </div>
 
@@ -42,15 +44,6 @@
 						<p> <%= groupie.first_name %> <%= link_to groupie.first_name, groupie_path %> </p>	
 					<% end %>
 				</div>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
-				<p class="groupie"> <%= @group.name %> </p>
 			<% end %>
 		</div>
 	</div>

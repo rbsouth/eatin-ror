@@ -231,6 +231,7 @@
     margin: 0px 50px 50px;
     border: 5px solid #ffffff8f;
     border-radius: 35px;
+    background: #5220318a;
   }
 }
 
@@ -240,7 +241,7 @@
     position: relative;
     left: 20%;
     background: linear-gradient(to bottom, #4CAF50, #027369);
-    border: solid #5000bfb5;
+    border: solid #e91e6370;
     border-radius: 50px;
     padding: 34px;
     margin: 15px;
@@ -254,3 +255,7 @@
     }
   }
 
+.new-group-link {
+  font-size: 45px;
+  color: white;
+}
