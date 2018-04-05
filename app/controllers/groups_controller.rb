@@ -1,15 +1,23 @@
 class GroupsController < ApplicationController
-  require 'open-uri'
+  require 'open-uri' 
   # Shows all groups current user is a groupie in
   def index
-    @groups = current_user.groups
+    if user_signed_in?
+      @groups = current_user.groups
+      @created_groups = current_user.created_groups
+      
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   # shows specified group
   def show
     @group = current_user.groups.find(params[:id])
     @groupie = @group.groupies.find_by(user_id: current_user.id, accepted: true)
-    @challenge = @groupie.challenges.last
+    if @groupie
+      @challenge = @groupie.challenges.last
+    end
   end
 
   # CREATED_GROUPS defined in model, allows admin privilages
@@ -37,7 +45,7 @@ class GroupsController < ApplicationController
     # adds group to users groups or rerenders page
     if @group.save!
       current_user.groups << @group
-      @group.groupies.update_attributes(accepted: true)
+      # @group.groupies.update_attributes(accepted: true)
       redirect_to @group
     else
       render :new

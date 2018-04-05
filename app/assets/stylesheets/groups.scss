@@ -5,9 +5,22 @@
   text-align: center;
   font-size: 50px;
 
-  .group-name {
-    font-size: 100px;
-  }
+}
+
+.group-name {
+  font-size: 100px;
+}
+
+.members-title {
+  font-size: 35px;
+}
+
+.owner-tag {
+  font-size: 35px;
+}
+
+.username {
+  font-size: 50px;
 }
 
 .groupie {
@@ -59,11 +72,33 @@
 
 }
 
-#map {
-  height: 500px;
-  width: 822px;
+.map-wrapper{
+  margin: 0px 0px 50px 0px !important;
+}
+
+.map-container {
   position: relative;
-  left: 8%;
+  height: 122px;
+  padding: 0px;
+  transition: height 0.7s ease; 
+  
+  &:hover {
+    height: 500px;
+    }
+}
+
+.map-container-closed {
+  height: 122px;
+}
+
+.map-container-open {
+  height: 500px;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
 }
 
 .group-members-title {
@@ -82,6 +117,7 @@
 .eatin-wrapper {
   height: 600px;
   width: 600px;
+  margin-bottom: 50px;
   position: relative;
   background: #373779c9;
   border-radius: 50px;
@@ -105,13 +141,11 @@
 }
 
 .members-wrapper-closed {
-  @extend .members-wrapper;
   max-height: 122px;
   overflow: hidden;
 }
 
 .members-wrapper-open {
-  @extend .members-wrapper;
   max-height: 1080px;
 }
 
@@ -187,6 +221,41 @@
 
   .all-groups-title {
     font-size: 100px;
+    border-bottom: 10px solid white;
+    margin: 20px 100px 90px;
   }
   
+  .group {
+    position: relative;
+    padding: 25px 0px;
+    margin: 0px 50px 50px;
+    border: 5px solid #ffffff8f;
+    border-radius: 35px;
+    background: #5220318a;
+  }
+}
+
+.group-page-btn {
+    font-size: 45px;
+    width: 500px;
+    position: relative;
+    left: 20%;
+    background: linear-gradient(to bottom, #4CAF50, #027369);
+    border: solid #e91e6370;
+    border-radius: 50px;
+    padding: 34px;
+    margin: 15px;
+
+    &:active {
+      background: linear-gradient(to top, #4CAF50, #027369);
+    }
+
+    .group-link {
+      color: white;
+    }
+  }
+
+.new-group-link {
+  font-size: 45px;
+  color: white;
 }
