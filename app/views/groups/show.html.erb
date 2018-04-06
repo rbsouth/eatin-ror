@@ -3,7 +3,6 @@
 	<% if @groupie %>
 		<div class="completed-challenges-count"> <%= @groupie.challenges.where(complete: true).count %> Completed Challenges </div>
 	<% end %>
-	<%= link_to "New Challenge", challenges_path, method: :post %>
 </div>
 
 <div class="challenge-wrapper">
@@ -13,17 +12,31 @@
 				<%= image_tag 'food-choices/' + @challenge.food + '.png', class: 'food-emoji' %>
 				</div>
 			<div class="challenge-location"> <%= @challenge.location %> </div>
+		<% else %>
+			<div class="food-image">
+				<%= image_tag 'food-choices/any.png', class: 'food-emoji' %>
+			</div>
+			<div class="challenge-location"> ???????????? </div>
+		<% end %>
+	</div>
+	<div class="challenge-description">
+		<strong>Todays' Challenge:</strong> 
+		<% if @challenge %>
+			<p> Eat <%= @challenge.food %> in <%= @challenge.location %> before <%= @challenge.due_by.strftime("%I:%M %P") %> </p>
+		<% else %>
+			<%= link_to "New Challenge", challenges_path(id: @group.id), method: :post %>
 		<% end %>
 	</div>
 	<div class="row map-wrapper justify-content-center">
+		<%= image_tag 'more.svg', class: "expand-map" %>
 		<div class="map-container col-10 map-container-closed">
 			<% if @challenge %>
-				<iframe id="map" src="//www.google.com/maps/embed/v1/directions?origin=<%= @group.central_location %>
+				<iframe id="map" src="https://www.google.com/maps/embed/v1/directions?origin=<%= @group.central_location %>
 			    &destination=<%= @challenge.location %>
 			    &key=AIzaSyDxEjlrSYBNlF6tMvxX2RLhVjaf3c_kras">
 			  </iframe>
 			<% else %>
-				<iframe id="map" src="//www.google.com/maps/embed/v1/directions?origin=<%= @group.central_location %>
+				<iframe id="map" src="https://www.google.com/maps/embed/v1/directions?origin=<%= @group.central_location %>
 			    &destination=<%= @group.central_location %>
 			    &key=AIzaSyDxEjlrSYBNlF6tMvxX2RLhVjaf3c_kras">
 			  </iframe>
@@ -31,10 +44,10 @@
 		</div>
 	</div>
 	<div class="row members-wrapper members-wrapper-closed justify-content-center">
+		<%= image_tag 'more.svg', class: "accordian-toggle" %>
 		<div class="groupies col-10">
 			<div class="group-members-title"> 
 				In this Group
-				<div class="accordian-toggle"></div>
 			</div>
 			<% @group.users.each do |groupie| %>
 				<div class="groupie">

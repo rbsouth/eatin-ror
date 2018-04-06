@@ -31,4 +31,5 @@ class User < ApplicationRecord
   # For group select to invite user. checks for groups that have less than 10 groupies
   def under_10
   end
+
 end

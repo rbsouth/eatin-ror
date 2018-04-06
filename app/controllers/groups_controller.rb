@@ -4,8 +4,6 @@ class GroupsController < ApplicationController
   def index
     if user_signed_in?
       @groups = current_user.groups
-      @created_groups = current_user.created_groups
-      
     else
       redirect_to new_user_session_path
     end
@@ -15,7 +13,7 @@ class GroupsController < ApplicationController
   def show
     @group = current_user.groups.find(params[:id])
     @groupie = @group.groupies.find_by(user_id: current_user.id, accepted: true)
-    if @groupie
+    if @groupie && @groupie.challenges.last.due_by > Time.now
       @challenge = @groupie.challenges.last
     end
   end
@@ -45,7 +43,7 @@ class GroupsController < ApplicationController
     # adds group to users groups or rerenders page
     if @group.save!
       current_user.groups << @group
-      # @group.groupies.update_attributes(accepted: true)
+      @group.groupies.first.update_attributes(accepted: true)
       redirect_to @group
     else
       render :new
