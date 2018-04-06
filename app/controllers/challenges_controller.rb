@@ -16,7 +16,6 @@ class ChallengesController < ApplicationController
 
   def create
     @group = Group.find(params[:id])
-    @style = 'short'
     @size = 'cities1000'
     @maxRows = '50'
     @username = 'rbsouth'
@@ -25,9 +24,9 @@ class ChallengesController < ApplicationController
     @longitude = @group.longitude.to_s
 
     # Get random city
-    @geonames_api_call = JSON.parse(open("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + @latitude + "&lng=" + @longitude + "&style=" + @style + "&cities=" + @size + "&radius=" + @radius + "&maxRows=" + @maxRows + "&username=" + @username).read)
+    @geonames_api_call = JSON.parse(open("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + @latitude + "&lng=" + @longitude + "&cities=" + @size + "&radius=" + @radius + "&maxRows=" + @maxRows + "&username=" + @username).read)
     @city = @geonames_api_call["geonames"].sample
-    @city_name = @city["name"]
+    @city_name = @city["name"] + ', ' + @city["adminCodes1"]["ISO3166_2"]
     @city_lat = @city["lat"].to_f
     @city_lng = @city["lng"].to_f
 
