@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: posgresql
+  encoding: unicode
+  username: eatin
+  password: <%= ENV['EATIN_DB_PASSWORD'] %>
+  database: eatin_production
