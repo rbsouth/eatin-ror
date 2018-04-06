@@ -67,11 +67,12 @@
   }
 
   .challenge-location {
-    position: absolute;
-    bottom: 61px;
-    border-bottom: 10px solid white;
-    left: 17%;
+    position: relative;
+    top: 440px;
+    padding-top: 20px;
+    border-top: 10px solid white;
     font-size: 60px;
+    text-align: center;
   }
 
 }
@@ -265,6 +266,28 @@
       color: white;
     }
   }
+
+.decline-invite {
+  font-size: 45px;
+  width: 500px;
+  height: 90px;
+  line-height: .5;
+  position: relative;
+  left: 20%;
+  background: linear-gradient(to bottom, #ff2222, #730202);
+  border: solid #0000002e;
+  border-radius: 50px;
+  padding: 34px;
+  margin: 15px;
+
+  &:active {
+    background: linear-gradient(to top, #ff2222, #730202);
+  }
+
+  .group-link {
+    color: white;
+  }
+}
 
 .new-group-link {
   font-size: 45px;

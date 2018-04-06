@@ -3,7 +3,6 @@
 	<% if @groupie %>
 		<div class="completed-challenges-count"> <%= @groupie.challenges.where(complete: true).count %> Completed Challenges </div>
 	<% end %>
-	<%= link_to "New Challenge", challenges_path, method: :post %>
 </div>
 
 <div class="challenge-wrapper">
@@ -13,10 +12,20 @@
 				<%= image_tag 'food-choices/' + @challenge.food + '.png', class: 'food-emoji' %>
 				</div>
 			<div class="challenge-location"> <%= @challenge.location %> </div>
+		<% else %>
+			<div class="food-image">
+				<%= image_tag 'food-choices/any.png', class: 'food-emoji' %>
+			</div>
+			<div class="challenge-location"> ???????????? </div>
 		<% end %>
 	</div>
 	<div class="challenge-description">
-		<strong>Todays' Challenge:</strong> <p> Eat <%= @challenge.food %> in <%= @challenge.location %> before <%= @challenge.due_by.strftime("%I:%M %P") %> </p>
+		<strong>Todays' Challenge:</strong> 
+		<% if @challenge %>
+			<p> Eat <%= @challenge.food %> in <%= @challenge.location %> before <%= @challenge.due_by.strftime("%I:%M %P") %> </p>
+		<% else %>
+			<%= link_to "New Challenge", challenges_path(id: @group.id), method: :post %>
+		<% end %>
 	</div>
 	<div class="row map-wrapper justify-content-center">
 		<%= image_tag 'more.svg', class: "expand-map" %>

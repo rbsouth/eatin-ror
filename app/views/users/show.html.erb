@@ -49,7 +49,7 @@
 				<!-- invite is groupie with accepted: false -->
 				<% @user.group_invites.each do |invite| %>
 					<%= invite.group.name %>
-					<%= link_to "Join Group", groupie_path(invite) %>
+					<%= link_to "Join Group", groupie_path(invite), method: :put %>
 					<%= link_to "Decline", groupie_path(invite), method: :destroy %>
 				<% end %>
 			</div>

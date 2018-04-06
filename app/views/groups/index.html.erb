@@ -9,10 +9,17 @@
 				<div class="owner-tag">You created this group</div>
 			<% end %>
 			<div class="members-title"> group members </div>
-			<% group.users.each do |user| %>
-				<div class="username"> @<%= user.username %> </div>
+			<% group.groupies.where(accepted: true).each do |groupie| %>
+				<div class="username"> @<%= groupie.user.username %> </div>
 			<% end %>
-			<div class="group-page-btn"> <%= link_to "Go to group page", group_path(group), class: 'group-link' %> </div>
+			<% group.groupies.each do |groupie| %>
+				<% if current_user.id == groupie.user.id && !groupie.accepted %>
+					<div class="group-page-btn"> <%= link_to "Join Group", groupie_path(groupie), method: :put, class: 'group-link' %> </div>
+					<div class="decline-invite"> <%= link_to "Decline", groupie_path(groupie), method: :destroy, class: 'group-link' %> </div>
+				<% elsif current_user.id == groupie.user.id && groupie.accepted %>
+					<div class="group-page-btn"> <%= link_to "Go to group page", group_path(group), class: 'group-link' %> </div>
+				<% end %>
+			<% end %>
 		</div>
 	<% end %>
 	<%= link_to "Create New Group", new_group_path, class: 'new-group-link' %>
