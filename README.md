@@ -1,24 +1,24 @@
-# README
+# Eatin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Displaying my skills in Mobile-First applications, API implimentation, and More.
 
-Things you may want to cover:
+### Installing
 
-* Ruby version
+Rails v 5.2.0
+Ruby v 2.4.2
 
-* System dependencies
+Getting Started
+```
+$ bundle
+$ rails db:schema:load
+```
 
-* Configuration
+## Built With
 
-* Database creation
+* [MD Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/)
+* [Google Maps API](https://developers.google.com/maps/)
+* [GeoNames API](http://www.geonames.org/export/web-services.html)
 
-* Database initialization
+## Acknowledgments
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* My Mom
