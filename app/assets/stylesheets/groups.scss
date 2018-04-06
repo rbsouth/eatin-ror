@@ -4,7 +4,11 @@
 .group-info {
   text-align: center;
   font-size: 50px;
+}
 
+.challenge-description {
+  text-align: center;
+  font-size: 30px;
 }
 
 .group-name {
@@ -73,7 +77,15 @@
 }
 
 .map-wrapper{
-  margin: 0px 0px 50px 0px !important;
+  margin: 30px 0px 50px 0px !important;
+
+  .expand-map {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 21px;
+    z-index: 2;
+  }
 }
 
 .map-container {
@@ -101,17 +113,16 @@
   border-radius: 15px;
 }
 
+.accordian-toggle {
+  position: absolute;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+}
+
 .group-members-title {
   font-size: 75px;
-
-  .accordian-toggle {
-    position: relative;
-    background: white;
-    left: 0px;
-    bottom: 95px;
-    height: 50px;
-    width: 50px;
-  }
+  margin-bottom: 10px;
 }
 
 .eatin-wrapper {

@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
-  <div class="col-8">
+  <div class="col-10 login-form">
 
-  <h2>Sign up</h2>
+  <div class="log-in-title">Sign Up</div>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -24,7 +24,7 @@
       <div class='form-group'>
         <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <label>(<%= @minimum_password_length %> characters minimum)</label>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       </div>
@@ -35,8 +35,8 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-success' %>
-        <%= render "devise/shared/links" %>
+        <%= f.submit "Sign up", class: 'log-in-button' %>
+        <%= link_to "Log in", new_session_path(resource_name), class: 'log-in-option' %><br />
       </div>
     <% end %>
   </div>

@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
     # adds group to users groups or rerenders page
     if @group.save!
       current_user.groups << @group
-      # @group.groupies.update_attributes(accepted: true)
+      @group.groupies.first.update_attributes(accepted: true)
       redirect_to @group
     else
       render :new
