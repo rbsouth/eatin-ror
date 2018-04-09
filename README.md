@@ -2,11 +2,6 @@
 
 Displaying my skills in Mobile-First applications, API implimentation, and More.
 
-[Try the Demo](https://reid-eatin.herokuapp.com)
-Use Guest Login:
-	Email: guest@demo.com
-	Password: password
-
 ### About
 
 Eatin is a web application where users can create and join groups and go on a local adventure. After the group decides a central location, the app will give the group a challenge. the challenge will choose a random food to eat and a random city within a chosen radius (with directions). The group then has 24 hours to complete the challenge before it vanishes!
@@ -26,6 +21,7 @@ Ruby v 2.4.2
 
 Getting Started
 ```
+$ git clone https://github.com/rbsouth/eatin-ror.git
 $ bundle
 $ rails db:schema:load
 ```

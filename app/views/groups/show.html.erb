@@ -9,12 +9,12 @@ x
 	<div class="eatin-wrapper">
 		<% if @challenge %>
 			<div class="food-image">
-				<%= image_tag asset_path "food-choices/" + @challenge.food + ".png", class: "food-emoji" %>
+				<%= image_tag (asset_path "food-choices/" + @challenge.food + ".png"), class: "food-emoji" %>
 			</div>
 			<div class="challenge-location"> <%= @challenge.location %> </div>
 		<% else %>
 			<div class="food-image">
-				<%= image_tag asset_path "food-choices/any.png", class: "food-emoji" %>
+				<%= image_tag (asset_path "food-choices/any.png"), class: "food-emoji" %>
 			</div>
 			<div class="challenge-location"> ???????????? </div>
 		<% end %>
@@ -28,7 +28,7 @@ x
 		<% end %>
 	</div>
 	<div class="row map-wrapper justify-content-center">
-		<%= image_tag asset_path "more.svg", class: "expand-map" %>
+		<%= image_tag (asset_path "more.svg"), class: "expand-map" %>
 		<div class="map-container col-10 map-container-closed">
 			<% if @challenge %>
 				<iframe id="map" src="https://www.google.com/maps/embed/v1/directions?origin=<%= @group.central_location %>
@@ -44,7 +44,7 @@ x
 		</div>
 	</div>
 	<div class="row members-wrapper members-wrapper-closed justify-content-center">
-		<%= image_tag asset_path 'more.svg', class: "accordian-toggle" %>
+		<%= image_tag (asset_path 'more.svg'), class: "accordian-toggle" %>
 		<div class="groupies col-10">
 			<div class="group-members-title"> 
 				In this Group
