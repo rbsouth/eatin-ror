@@ -1,6 +1,6 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :delete_challenges => :environment do
   puts "Deleting old Challenges..."
-  Challenge.delete_all("created_at < '#{60.days.ago}'")
+  Challenge.where("created_at < '#{24.hours.ago}'").delete_all
   puts "done."
 end
