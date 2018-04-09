@@ -2,7 +2,7 @@
 
 Mobile and Tablet Web Application
 
-Displaying my skills in Mobile-First applications, API implimentation, and More.
+Displaying my skills in Mobile-First applications, API implementation, and more.
 
 * [Try the Demo](https://reid-eatin.herokuapp.com)
 * Use Guest Login:
@@ -13,15 +13,15 @@ For full functionality Create an Account
 
 ### About
 
-Eatin is a web application where users can create and join groups and go on a local adventure. After the group decides a central location, the app will give the group a challenge. the challenge will choose a random food to eat and a random city within a chosen radius (with directions). The group then has 24 hours to complete the challenge before it vanishes!
+Eatin is a web application where users can create and join groups and go on a local adventure. After the group decides a central location, the app will give the group a challenge. the challenge will choose a random food to eat and a random city within a chosen radius (with directions to the city provided by the app). The group then has 24 hours to complete the challenge before it vanishes!
 
 ### Planned Updates
 
-Groups will be able to see previously completed challenges
+* Groups will be able to see previously completed challenges
 
-Group members will be able to attach photos to a challenge
+* Group members will be able to attach photos to a challenge
 
-Open to suggestions :)
+* Open to suggestions :)
 
 ### Installing
 
