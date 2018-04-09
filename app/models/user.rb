@@ -28,9 +28,4 @@ class User < ApplicationRecord
     Groupie.where(user_id: self.id).where(accepted: false)
   end
 
-  # For group select to invite user. checks for groups that have less than 10 groupies
-  def under_10
-    
-  end
-
 end

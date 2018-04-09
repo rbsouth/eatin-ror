@@ -3,6 +3,9 @@
 	<% if @groupie %>
 		<div class="completed-challenges-count"> <%= @groupie.challenges.where(complete: true).count %> Completed Challenges </div>
 	<% end %>
+	<% if current_user.id == @group.user_id %>
+		<%= link_to "Edit Group", edit_group_path(@group) %>
+	<% end %>
 </div>
 x
 <div class="challenge-wrapper">
