@@ -1,6 +1,6 @@
 <h1> Friends List </h1>
 <div class="friendships">
-	<% @user.friendships.each do |friendship| %>
+	<% @user.friendships.each do |friendship| %> 
 		<div class="friendship">
 			<%= friendship.friend.first_name %>
 			<%= link_to "remove", friendship_url(friendship), method: :delete %>

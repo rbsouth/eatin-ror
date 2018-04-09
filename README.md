@@ -21,6 +21,7 @@ Ruby v 2.4.2
 
 Getting Started
 ```
+$ git clone https://github.com/rbsouth/eatin-ror.git
 $ bundle
 $ rails db:schema:load
 ```
