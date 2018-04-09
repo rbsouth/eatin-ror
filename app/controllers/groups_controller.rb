@@ -14,11 +14,7 @@ class GroupsController < ApplicationController
     @group = current_user.groups.find(params[:id])
     @groupie = @group.groupies.find_by(user_id: current_user.id, accepted: true)
     if @groupie
-      if @groupie.challenges.last.due_by != nil
-        if @groupie.challenges.last.due_by > Time.now
-          @challenge = @groupie.challenges.last
-        end
-      end
+      @challenge = @groupie.challenges.last
     end
   end
 
