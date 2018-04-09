@@ -1,4 +1,6 @@
-# Eatin
+# Eatin Mobile
+
+Mobile and Tablet Web Application
 
 Displaying my skills in Mobile-First applications, API implimentation, and More.
 
