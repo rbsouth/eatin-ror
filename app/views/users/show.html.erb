@@ -41,8 +41,11 @@
 			<% end %>
 			<div class="friend-requests">
 				<% @user.friendship_requests.each do |request| %>
-					<%= request.user.first_name %>
-					<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
+					<div class="friend-request">
+						<%= request.user.first_name %>
+						<%= link_to "Add Friend", friendships_path(friend_id: request.user, accepted: true), method: :post, remote: true %>
+						<%= link_to "Decline", friendship_path(user_id: request.user, friend_id: current_user), method: :delete %>
+					</div>
 				<% end %>
 			</div>
 			<div class="group-requests">
@@ -50,7 +53,7 @@
 				<% @user.group_invites.each do |invite| %>
 					<%= invite.group.name %>
 					<%= link_to "Join Group", groupie_path(invite), method: :put %>
-					<%= link_to "Decline", groupie_path(invite), method: :destroy %>
+					<%= link_to "Decline", groupie_path(invite), method: :delete %>
 				<% end %>
 			</div>
 		</div>
