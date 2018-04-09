@@ -22,7 +22,7 @@ x
 	<div class="challenge-description">
 		<strong>Todays Challenge:</strong> 
 		<% if @challenge %>
-			<p> Eat <%= @challenge.food %> in <%= @challenge.location %> <!-- before  <%= # @challenge.due_by.strftime("%I:%M %P") %> --> </p>
+			<p> Eat <%= @challenge.food %> in <%= @challenge.location %> </p>
 		<% else %>
 			<%= link_to "New Challenge", challenges_path(id: @group.id), method: :post %>
 		<% end %>
