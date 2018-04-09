@@ -7,7 +7,6 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'parsley-rails'
-gem "font-awesome-rails"
 gem 'json'
 gem 'unirest'
 gem 'pg', group: :production
