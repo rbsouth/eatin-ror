@@ -21,29 +21,6 @@
 	@import url('https://fonts.googleapis.com/css?family=Montserrat');
 	@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates');
 
-
-	.navbar {
-		height: 150px;
-    background: #ffffffed;
-		position: sticky;
-    top: 0;
-    z-index: 4;
-	}
-
-	.navbar-brand {
-    font-size: 30px;
-	}
-
-	.nav-logo {
-		position: relative;
-		top: 5px;
-    height: 150px;
-	}
-
-	.nav-link {
-		font-size: 100px;
-	}
-
 	html, body {
 
 		background: image-url('palm-tree-bg.jpg') no-repeat center center fixed; 
@@ -60,25 +37,98 @@
 		font-family: "Montserrat", "Montserrat Alternates";
 	}
 
-	.navbar-toggler:not(:disabled):not(.disabled) {
-		height: 90px;
-    width: 90px;
+	@media (max-width: 800px) {
+
+		.navbar {
+			height: 150px;
+	    background: #ffffffed;
+			position: sticky;
+	    top: 0;
+	    z-index: 4;
+		}
+
+		.navbar-brand {
+	    font-size: 30px;
+		}
+
+		.nav-logo {
+			position: relative;
+			top: 5px;
+	    height: 150px;
+		}
+
+		.nav-link {
+			font-size: 100px;
+		}
+
+
+		.navbar-toggler:not(:disabled):not(.disabled) {
+			height: 90px;
+	    width: 90px;
+		}
+
+		.navbar-light .navbar-toggler-icon {
+			height: 75px;
+	    width: 65px;
+		}
+		.collapse.show {
+			background: #f8f9fa;
+	    box-shadow: 0px 9px 11px 2px #43325a73;
+	    z-index: 1;
+		}
+
+		.row {
+	    width: 100%;
+		}
+
+		.color-black {
+			color: black;
+		}
 	}
 
-	.navbar-light .navbar-toggler-icon {
-		height: 75px;
-    width: 65px;
-	}
-	.collapse.show {
-		background: #f8f9fa;
-    box-shadow: 0px 9px 11px 2px #43325a73;
-    z-index: 1;
-	}
+	// Skip to desktop for now, tablet looks OK with mobile styling
+	@media (min-width: 1200px) {
+		.navbar {
+			height: 50px;
+	    background: #ffffffed;
+			position: sticky;
+	    top: 0;
+	    z-index: 4;
+		}
 
-	.row {
-    width: 100%;
-	}
+		.navbar-brand {
+	    // font-size: 10px;
+		}
 
-	.color-black {
-		color: black;
+		.nav-logo {
+	    height: 50px;
+		}
+
+		.nav-link {
+			// font-size: 100px;
+		}
+
+
+		.navbar-toggler:not(:disabled):not(.disabled) {
+			height: 90px;
+	    width: 90px;
+		}
+
+		.navbar-light .navbar-toggler-icon {
+			height: 75px;
+	    width: 65px;
+		}
+		.collapse.show {
+			background: #f8f9fa;
+	    box-shadow: 0px 9px 11px 2px #43325a73;
+	    z-index: 1;
+		}
+
+		.row {
+	    width: 100%;
+		}
+
+		.color-black {
+			color: black;
+		}
 	}
