@@ -37,13 +37,17 @@
 		font-family: "Montserrat", "Montserrat Alternates";
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 1199px) {
 
-		.navbar {
-			height: 150px;
-	    background: #ffffffed;
-			position: sticky;
-	    top: 0;
+		.navbar-custom {
+	    position: relative;
+	    display: flex;
+	    background-color: #ffffffc4;
+	    flex-wrap: wrap;
+	    width: 103%;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 0.5rem 1rem;
 	    z-index: 4;
 		}
 
@@ -88,7 +92,7 @@
 
 	// Skip to desktop for now, tablet looks OK with mobile styling
 	@media (min-width: 1200px) {
-		.navbar {
+		.navbar-custom {
 			height: 50px;
 	    background: #ffffffed;
 			position: sticky;
