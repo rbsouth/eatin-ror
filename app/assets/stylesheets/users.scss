@@ -3,167 +3,171 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // login / sign up page
-.log-in-title {
-  text-align: center;
-  font-size: 100px;
-}
+@media (max-width: 1199px) {
 
-.login-form {
-
-  label {
-    font-size: 50px;
+  .log-in-title {
+    text-align: center;
+    font-size: 100px;
   }
 
-  input {
-    @extend label;
-    height: 125px;
-    background: #ffffffed;
-  }
+  .login-form {
 
-  .log-in-button {
-    font-size: 50px;
-    background: transparent;
-    border: none;
-    color: white;
-    height: 90px;
-  }
-
-  #user_remember_me {
-    width: 100px;
-  }
-
-  .remember-me-label {
-    position: relative;
-    bottom: 50px;
-    left: 15px;
-  }
-
-  .log-in-option {
-    font-size: 50px;
-    color: white;
-    padding: 5px;
-    border: 5px solid;
-    line-height: 3;
-  }
-}
-
-.group-invite {
-	width: 100%;
-  text-align: center;
-
-	.group-select-label {
-    display: inline;
-		font-size: 42px;
-    width: 400px;
-	}
-
-	.group-select {
-    margin: 80px 0px 10px 10px;
-    height: 90px;
-    font-size: 40px;
-    width: 300px;
-    background: #80808099;
-	}
-
-	.group-invite-btn {
-		@extend .friend-btn;
-		left: 0px !important;
-		margin-top: 0px !important;
-	}
-  
-}
-
-.invite-modal {
-	max-width: 90% !important;
-  width: 90%;
-}
-
-.modal-content {
-  height: 1120px;
-
-  .modal-title {
-    font-size: 75px;
-  }
-}
-
-.modal-header .close {
-  margin: -.0rem -.5rem -1rem auto;
-}
-
-.close {
-  font-size: 7.5rem;
-  line-height: 0.5;
-}
-
-.friend-btn {
-  margin-top: 75px;
-  position: relative;
-  font-size: 100px;
-  line-height: 16rem;
-  left: 2.5%;
-  background: blueviolet;
-  color: white;
-  width: 95%;
-  height: 300px;
-  border-radius: 20px;
-}
-
-.user-view {
-	text-align: center;
-
-	.user-photo {
-		height: 400px;
-		width: 400px;
-		background: #80808082;
-    position: relative;
-    left: 30%;
-	}
-
-	.first-name {
-		font-size: 150px;
-    height: 175px;
-	}
-
-	.username {
-    font-size: 35px;
-	}
-
-	.open-invites {
-		font-size: 45px;
-    height: 40px;
-    line-height: 0;
-		background: linear-gradient(to bottom, #4CAF50, #027369);
-    border: solid #e91e6370;    
-    color: white;
-    border-radius: 50px;
-    padding: 34px;
-    margin: 15px;
-
-    &:active {
-		background: linear-gradient(to top, #4CAF50, #027369);    }
-	}
-
-	.friend-count {
-		font-size: 25px;
-	}
-
-	.requests {
-		margin-top: 100px;
-    width: 600px;
-    position: relative;
-    border-bottom: 5px solid white;
-    left: 19.5%;
-
-    .requests-title {
-    	font-size: 55px;
-	    width: 300px;
-	    position: relative;
-	    left: 25%;
-	    border-bottom: 5px solid white;
-    }
-
-    .friend-request {
+    label {
       font-size: 50px;
     }
-	}
+
+    input {
+      // @extend label;
+      font-size: 50px;
+      height: 125px;
+      background: #ffffffed;
+    }
+
+    .log-in-button {
+      font-size: 50px;
+      background: transparent;
+      border: none;
+      color: white;
+      height: 90px;
+    }
+
+    #user_remember_me {
+      width: 100px;
+    }
+
+    .remember-me-label {
+      position: relative;
+      bottom: 50px;
+      left: 15px;
+    }
+
+    .log-in-option {
+      font-size: 50px;
+      color: white;
+      // padding: 5px;
+      // border: 5px solid;
+      line-height: 3;
+    }
+  }
+
+  .group-invite {
+  	width: 100%;
+    text-align: center;
+
+  	.group-select-label {
+      display: inline;
+  		font-size: 42px;
+      width: 400px;
+  	}
+
+  	.group-select {
+      margin: 80px 0px 10px 10px;
+      height: 90px;
+      font-size: 40px;
+      width: 300px;
+      background: #80808099;
+  	}
+
+  	.group-invite-btn {
+  		@extend .friend-btn;
+  		left: 0px !important;
+  		margin-top: 0px !important;
+  	}
+    
+  }
+
+  .invite-modal {
+  	max-width: 90% !important;
+    width: 90%;
+  }
+
+  .modal-content {
+    height: 1120px;
+
+    .modal-title {
+      font-size: 75px;
+    }
+  }
+
+  .modal-header .close {
+    margin: -.0rem -.5rem -1rem auto;
+  }
+
+  .close {
+    font-size: 7.5rem;
+    line-height: 0.5;
+  }
+
+  .friend-btn {
+    margin-top: 75px;
+    position: relative;
+    font-size: 100px;
+    line-height: 16rem;
+    left: 2.5%;
+    background: blueviolet;
+    color: white;
+    width: 95%;
+    height: 300px;
+    border-radius: 20px;
+  }
+
+  .user-view {
+  	text-align: center;
+
+  	.user-photo {
+  		height: 400px;
+  		width: 400px;
+  		background: #80808082;
+      position: relative;
+      left: 30%;
+  	}
+
+  	.first-name {
+  		font-size: 150px;
+      height: 175px;
+  	}
+
+  	.username {
+      font-size: 35px;
+  	}
+
+  	.open-invites {
+  		font-size: 45px;
+      height: 40px;
+      line-height: 0;
+  		background: linear-gradient(to bottom, #4CAF50, #027369);
+      border: solid #e91e6370;    
+      color: white;
+      border-radius: 50px;
+      padding: 34px;
+      margin: 15px;
+
+      &:active {
+  		background: linear-gradient(to top, #4CAF50, #027369);    }
+  	}
+
+  	.friend-count {
+  		font-size: 25px;
+  	}
+
+  	.requests {
+  		margin-top: 100px;
+      width: 600px;
+      position: relative;
+      border-bottom: 5px solid white;
+      left: 19.5%;
+
+      .requests-title {
+      	font-size: 55px;
+  	    width: 300px;
+  	    position: relative;
+  	    left: 25%;
+  	    border-bottom: 5px solid white;
+      }
+
+      .friend-request {
+        font-size: 50px;
+      }
+  	}
+  }
 }
