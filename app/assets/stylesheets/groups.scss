@@ -1,266 +1,295 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.group-info {
-  text-align: center;
-  font-size: 50px;
-}
 
-.challenge-description {
-  text-align: center;
-  font-size: 30px;
-}
+// group show page
 
-.group-name {
-  font-size: 100px;
-}
+  .challenge-wrapper {
+    height: 800px;
+    width: 100%;
+    
+    .food-image {
+      position: absolute;
+      bottom: 37%;
+      left: 25%;
+      height: 300px;
+      width: 300px;
+    }
 
-.members-title {
-  font-size: 35px;
-}
+    .food-emoji  {
+      height: 100%;
+    }
 
-.owner-tag {
-  font-size: 35px;
-}
+    .challenge-location {
+      position: relative;
+      top: 440px;
+      padding-top: 20px;
+      border-top: 10px solid white;
+      font-size: 60px;
+      text-align: center;
+    }
 
-.username {
-  font-size: 50px;
-}
-
-.groupie {
-  font-size: 50px;
-  background: #ffffff45;
-  border-radius: 5px;
-  text-align: center;
-
-  a {
-    color: inherit;
-    cursor: pointer;
-  }
-}
-
-.groupies {
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 15px;
-  background: #433583;
-  overflow: hidden;
-  // overflow: scroll; not needed for mobile
-}
-
- // group show page
-
-.challenge-wrapper {
-	height: 800px;
-	width: 100%;
-  
-  .food-image {
-    position: absolute;
-    bottom: 37%;
-    left: 25%;
-    height: 300px;
-    width: 300px;
   }
 
-  .food-emoji  {
-    height: 100%;
+  .map-wrapper{
+    margin: 30px 0px 50px 0px !important;
+
+    .expand-map {
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      left: 21px;
+      z-index: 2;
+    }
   }
 
-  .challenge-location {
+  .map-container {
     position: relative;
-    top: 440px;
-    padding-top: 20px;
-    border-top: 10px solid white;
-    font-size: 60px;
-    text-align: center;
+    height: 122px;
+    padding: 0px;
+    transition: height 0.7s ease; 
+    
+    &:hover {
+      height: 500px;
+      }
   }
 
-}
+  .map-container-closed {
+    height: 122px;
+  }
 
-.map-wrapper{
-  margin: 30px 0px 50px 0px !important;
+  .map-container-open {
+    height: 500px;
+  }
 
-  .expand-map {
+  #map {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .accordian-toggle {
     position: absolute;
+    left: 20px;
     height: 50px;
     width: 50px;
-    left: 21px;
-    z-index: 2;
   }
-}
 
-.map-container {
-  position: relative;
-  height: 122px;
-  padding: 0px;
-  transition: height 0.7s ease; 
-  
-  &:hover {
-    height: 500px;
-    }
-}
+  .group-members-title {
+    font-size: 75px;
+    margin-bottom: 10px;
+  }
 
-.map-container-closed {
-  height: 122px;
-}
-
-.map-container-open {
-  height: 500px;
-}
-
-#map {
-  height: 100%;
-  width: 100%;
-  border-radius: 15px;
-}
-
-.accordian-toggle {
-  position: absolute;
-  left: 20px;
-  height: 50px;
-  width: 50px;
-}
-
-.group-members-title {
-  font-size: 75px;
-  margin-bottom: 10px;
-}
-
-.eatin-wrapper {
-  height: 600px;
-  width: 600px;
-  margin-bottom: 50px;
-  position: relative;
-  background: #373779c9;
-  border-radius: 50px;
-  box-shadow: inset 0px 0px 18px 2px #0000008c;
-  left: 19%;
-}
-
-.challenge-image {
-  height: 300px;
-  position: relative;
-  top: 10%;
-  left: 5%;
-}
-
-  // Create another toggleable class to create accordian effect
-  // Change min-height to max-height?
-  // Set .user to display: none; ?
-.members-wrapper {
-  margin: 0px 0px 50px 0px !important;
-  transition: max-height 0.7s ease;
-}
-
-.members-wrapper-closed {
-  max-height: 122px;
-  overflow: hidden;
-}
-
-.members-wrapper-open {
-  max-height: 1080px;
-}
-
- // new group page
-
-.new-group {
-  margin-top: 50px;
-  position: relative;
-  background: #14133eab;
-  left: 8.5%;
-  padding: 40px;
-  border-radius: 15px;
-
-  .form-title {
-    text-align: center;
-    font-size: 100px;
+  .eatin-wrapper {
+    height: 600px;
+    width: 600px;
     margin-bottom: 50px;
-  }
-  
-  .form-control {
-    font-size: 4rem;
-    line-height: 2;
-    border-radius: 0.50rem;
-  }
-
-  .form-group {
-    margin-bottom: 80px;
-    width: 736px;
-  }
-
-  .btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
     position: relative;
-    height: 180px;
-    width: 100%;
-    border-radius: 20px;
-    font-size: 78px;
-    background: #2143ff87;
-    color: white;
-    border: blue;
-    margin-bottom: 14px;
-    line-height: 1px;
-  }
-  .radius-selector {
-    height: 126px;
-    width: 200px;
-    background: white;
-    font-size: 78px;
-    color: #6b757c;
-    position: relative;
-    right: 36px;
-    border-radius: 9px;
-    option {
-      font-size: 12px;
-    }
+    background: #373779c9;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 18px 2px #0000008c;
   }
 
-  .unit-selector {
-    @extend .radius-selector;
-    width: 457px;
-    margin-left: 73px;
-  }
-
-  .group-selectors {
+  .challenge-image {
+    height: 300px;
     position: relative;
+    top: 10%;
     left: 5%;
   }
-}
 
- // groups index page
+    // Create another toggleable class to create accordian effect
+    // Change min-height to max-height?
+    // Set .user to display: none; ?
+  .members-wrapper {
+    margin: 0px 0px 50px 0px !important;
+    transition: max-height 0.7s ease;
+  }
 
-.groups {
-  text-align: center;
+  .members-wrapper-closed {
+    max-height: 122px;
+    overflow: hidden;
+  }
 
-  .all-groups-title {
+  .members-wrapper-open {
+    max-height: 1080px;
+  }
+
+  .groupie {
+      font-size: 50px;
+      background: #ffffff45;
+      border-radius: 5px;
+      text-align: center;
+
+      a {
+        color: inherit;
+        cursor: pointer;
+      }
+    }
+
+    .groupies {
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 15px;
+      background: #433583;
+      overflow: hidden;
+      // overflow: scroll; not needed for mobile
+    }
+
+  .group-name {
     font-size: 100px;
-    border-bottom: 10px solid white;
-    margin: 20px 100px 90px;
+  }
+
+  .group-info {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .challenge-description {
+    text-align: center;
+    font-size: 30px;
+  }
+
+
+  .members-title {
+    font-size: 35px;
+  }
+
+  .owner-tag {
+    font-size: 35px;
+  }
+
+  .username {
+    font-size: 50px;
   }
   
-  .group {
-    position: relative;
-    padding: 25px 0px;
-    margin: 0px 50px 50px;
-    border: 5px solid #ffffff8f;
-    border-radius: 35px;
-    background: #5220318a;
-  }
-}
+@media (max-width: 1199px) {
 
-.group-page-btn {
+   // new group page
+
+  .eatin-wrapper {
+    left: 19%
+  }
+
+  .new-group {
+    margin-top: 50px;
+    position: relative;
+    background: #14133eab;
+    left: 8.5%;
+    padding: 40px;
+    border-radius: 15px;
+
+    .form-title {
+      text-align: center;
+      font-size: 100px;
+      margin-bottom: 50px;
+    }
+    
+    .form-control {
+      font-size: 4rem;
+      line-height: 2;
+      border-radius: 0.50rem;
+    }
+
+    .form-group {
+      margin-bottom: 80px;
+      width: 736px;
+    }
+
+    .btn:not(:disabled):not(.disabled) {
+      cursor: pointer;
+      position: relative;
+      height: 180px;
+      width: 100%;
+      border-radius: 20px;
+      font-size: 78px;
+      background: #2143ff87;
+      color: white;
+      border: blue;
+      margin-bottom: 14px;
+      line-height: 1px;
+    }
+    .radius-selector {
+      height: 126px;
+      width: 200px;
+      background: white;
+      font-size: 78px;
+      color: #6b757c;
+      position: relative;
+      right: 36px;
+      border-radius: 9px;
+      option {
+        font-size: 12px;
+      }
+    }
+
+    .unit-selector {
+      @extend .radius-selector;
+      width: 457px;
+      margin-left: 73px;
+    }
+
+    .group-selectors {
+      position: relative;
+      left: 5%;
+    }
+  }
+
+   // groups index page
+
+  .groups {
+    text-align: center;
+
+    .all-groups-title {
+      font-size: 100px;
+      border-bottom: 10px solid white;
+      margin: 20px 100px 90px;
+    }
+    
+    .group {
+      position: relative;
+      padding: 25px 0px;
+      margin: 0px 50px 50px;
+      border: 5px solid #ffffff8f;
+      border-radius: 35px;
+      background: #5220318a;
+    }
+  }
+
+  .group-page-btn {
+      font-size: 45px;
+      width: 500px;
+      position: relative;
+      left: 20%;
+      background: linear-gradient(to bottom, #4CAF50, #027369);
+      border: solid #e91e6370;
+      border-radius: 50px;
+      padding: 34px;
+      margin: 15px;
+
+      &:active {
+        background: linear-gradient(to top, #4CAF50, #027369);
+      }
+
+      .group-link {
+        color: white;
+      }
+    }
+
+  .decline-invite {
     font-size: 45px;
     width: 500px;
+    height: 90px;
+    line-height: .5;
     position: relative;
     left: 20%;
-    background: linear-gradient(to bottom, #4CAF50, #027369);
-    border: solid #e91e6370;
+    background: linear-gradient(to bottom, #ff2222, #730202);
+    border: solid #0000002e;
     border-radius: 50px;
     padding: 34px;
     margin: 15px;
 
     &:active {
-      background: linear-gradient(to top, #4CAF50, #027369);
+      background: linear-gradient(to top, #ff2222, #730202);
     }
 
     .group-link {
@@ -268,29 +297,16 @@
     }
   }
 
-.decline-invite {
-  font-size: 45px;
-  width: 500px;
-  height: 90px;
-  line-height: .5;
-  position: relative;
-  left: 20%;
-  background: linear-gradient(to bottom, #ff2222, #730202);
-  border: solid #0000002e;
-  border-radius: 50px;
-  padding: 34px;
-  margin: 15px;
-
-  &:active {
-    background: linear-gradient(to top, #ff2222, #730202);
-  }
-
-  .group-link {
+  .new-group-link {
+    font-size: 45px;
     color: white;
   }
 }
 
-.new-group-link {
-  font-size: 45px;
-  color: white;
+@media (min-width: 1200px) {
+ 
+ .eatin-wrapper {
+    left: 27%
+  }
+
 }
