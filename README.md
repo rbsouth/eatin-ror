@@ -1,6 +1,6 @@
 # Eatin Mobile
 
-Mobile and Tablet Web Application
+Web Application --- Now works on Desktop, Mobile, and Tablet
 
 Displaying my skills in Mobile-First applications, API implementation, and more.
 
