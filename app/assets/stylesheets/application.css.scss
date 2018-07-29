@@ -102,10 +102,14 @@
 
 		.navbar-brand {
 	    // font-size: 10px;
+	    position: relative;
+	    left: 1%;
 		}
 
 		.nav-logo {
 	    height: 50px;
+      position: relative;
+	    left: 84%;
 		}
 
 		.nav-link {
