@@ -4,8 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.2'
 
 gem 'jquery-rails'
-gem 'devise'
-gem 'bootstrap', '~> 4.0.0'
+gem "devise"
+gem "bootstrap"
 gem 'parsley-rails'
 gem 'json'
 gem 'unirest'
