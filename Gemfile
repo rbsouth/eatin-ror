@@ -5,7 +5,7 @@ ruby '2.4.2'
 
 gem 'jquery-rails'
 gem 'devise'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'parsley-rails'
 gem 'json'
 gem 'unirest'
