@@ -3,7 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // login / sign up page
+  .login-directions-container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .login-directions {
+    font-size: 50px;
+    text-align: center;
+
+  }
+
 @media (max-width: 1199px) {
+
 
   .log-in-title {
     text-align: center;
